@@ -3,7 +3,7 @@
 ### Powered by
 [![N|Solid](https://reedfrog.com/images/nodejs-logo.png)](https://reedfrog.com/images/nodejs-logo.png)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.com/github/nawissor/reedfrog-android-app)
+[![Build Status](https://travis-ci.com/nawissor/reedfrog-android-app.svg?branch=master)](https://travis-ci.com/github/nawissor/reedfrog-android-app)
 
 ReedFrog is a web and mobile affiliate marketing platform. The current web and mobile platform intelligent API's integrate with the the product feeds of the brands we promote. The social feeds are powered by internal RSS generators on [https://reedfrog.com]
 
