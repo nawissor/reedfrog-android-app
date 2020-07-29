@@ -1,0 +1,35 @@
+.banner {
+    
+    position: relative;
+    top:15px;
+    margin: 0px;
+    width: 90%;
+    padding: 0% 5%;
+    height: 72px;
+    
+}
+.heading {
+    display: inline-block;
+    position: absolute;
+    left: 110px;
+    line-height: 75px;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 35px;
+    color: #11999E;
+    font-weight: 700;
+}
+
+.slogan {
+    display: inline-block;
+    position: absolute;
+    left: 110px;
+    line-height: 130px;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #11999E;
+    font-weight: 300;
+}
+
+
+
+

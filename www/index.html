@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudflare.com ">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css">
+<title>Reedfrog</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.3.0.min.js"></script>
+    </head>
+    <body>
+<div data-role="page" id="startscreen" data-theme="d">
+  <div data-role="header" data-theme="b">
+    <a href="#" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
+    <h1>Reedfrog</h1>
+    <a href="#" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">ReedFrog</div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div data-role="content">
+  <ul data-role="listview" data-inset="true" data-theme="b">
+    <li><a href="#women" data-direction="reverse" data-transition="slide">
+        <img src="img/shop-women.jpg">
+    <h2>Shop Women</h2>
+    <p>Things we love</p></a>
+    </li>
+    <li><a href="#men" data-direction="reverse" data-transition="flip">
+        <img src="img/shop-men.jpg">
+    <h2>Shop Men</h2>
+    <p>All about men</p></a>
+    </li>
+    <li><a href="#kids" data-direction="reverse" data-transition="flip">
+        <img src="img/shop-kids.jpg">
+    <h2>Shop Kids</h2>
+    <p>Let them play</p></a>
+    </li>
+      <li><a href="#weddings" data-direction="reverse" data-transition="flip">
+        <img src="img/shop-wedding.jpg">
+    <h2>Shop Wedding</h2>
+    <p>Shine on your big day</p></a>
+    </li>
+</ul>
+</div>
+  <div data-role="footer" data-position="fixed" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar">
+	<ul>
+		<li><a href="b.html">&#62;</a></li>
+		<li><a href="b.html">&#62;</a></li>
+        <li><a href="b.html">&#62;</a></li>
+		<li><a href="b.html">Two</a></li>
+        <li><a href="b.html">Two</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+        <!--START WOMEN FASHION PAGE-->
+        <div data-role="page" id="women" data-rel="back" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Women</h1>
+     <a href="#" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Women</div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div data-role="content">
+<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-theme="b" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/womens-accessories-app-li-icon.jpg" />Accessories</h2>
+<ul class="catselector" data-role="listview" data-filter="false">
+        <li class="acc-selector" data-title="Bags" data-ajax="false" data-href="#women" data-id="rfapp_womens_bags"><a href="">Bags</a></li>
+    <li class="acc-selector" data-title="Glasses" data-ajax="false" data-href="#women" data-id="rfapp_womens_glasses" ><a href="">Glasses</a></li>
+         <li class="acc-selector" data-title="Hats" data-ajax="false" data-href="#women" data-id="rfapp_womens_hats"><a href="">Hats</a></li>
+    <li class="acc-selector" data-title="Jewelry" data-ajax="false" data-href="#women" data-id="rfapp_womens_jewelry"><a href="">Jewelry</a></li>
+           <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#women" data-id="rfapp_womens_shoes"><a href="">Shoes</a></li>
+    </ul>
+</div>
+    <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/womens-beauty-app-li-icon.jpg" />Beauty & Hair</h2>
+<ul class="catselector" data-role="listview" data-filter="false">
+        <li class="acc-selector" data-title="Health" data-ajax="false" data-href="#women" data-id="rfapp_womens_health"><a href="">Health & Personal Care</a></li>
+         <li class="acc-selector" data-title="Skincare" data-ajax="false" data-href="#women"  data-id="rfapp_womens_makeup"><a href="">Makeup & Skincare</a></li>
+             <li class="acc-selector" data-title="Hair" data-ajax="false" data-href="#women" data-id="rfapp_womens_hair"><a href="">Wigs & Hair Pieces</a></li>
+    </ul>
+        
+</div>
+        <div id="womensfashion" data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/womens-fashion-app-li-icon.jpg" />Clothing </h2>
+
+<ul class="catselector" data-role="listview" data-filter="false">
+        <li class="acc-selector" data-title="Activewear" data-ajax="false" data-href="#women" data-id="rfapp_womens_activewear"><a href="">Activewear</a></li>
+         <li class="acc-selector" data-title="Clothing" data-ajax="false" data-href="#women" data-id="rfapp_womens_clothing"><a href="">Clothing</a></li>
+             <li class="acc-selector" data-title="Dresses" data-ajax="false" data-href="#women" data-id="rfapp_womens_dresses"><a href="">Dresses</a></li>
+     <li class="acc-selector" data-title="Intimates" data-ajax="false" data-href="#women" data-id="rfapp_womens_intimates"><a href="">Intimates & Lingerie</a></li>
+    <li class="acc-selector" data-title="Plus size" data-ajax="false" data-href="#women" data-id="rfapp_womens_plus"><a href="">Plus size</a></li>
+    <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#women" data-id="rfapp_womens_swim"><a href="">Swimwear</a></li>
+    <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#women" data-id="rfapp_womens_tops"><a href="">Tops</a></li>
+    </ul>
+            
+        
+</div>
+</div>
+  <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#weddings" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Wedding</a></li>
+		<li><a href="#men" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Men</a></li>
+        <li><a href="#kids" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Kids</a></li>
+	</ul>
+</div>
+  </div>
+</div><!--END WOMENS FASHION PAGE-->
+        
+        <!--START MENS PAGE-->
+        <div data-role="page" id="men" data-rel="back" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Men</h1>
+     <a href="#" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Men</div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div data-role="content">
+<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-theme="b" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-accessories-app-li-icon.jpg" />Accessories</h2>
+<ul class="catselector" data-role="listview" data-filter="false">
+    <li class="acc-selector" data-title="Belts" data-ajax="false" data-href="#men" data-id="rfapp_mens_belts"><a href="">Belts & Gloves</a></li>
+        <li class="acc-selector" data-title="All sorts" data-ajax="false" data-href="#men" data-id="rfapp_mens_accessories"><a href="">Bits n Pieces</a></li>
+         <li class="acc-selector" data-title="Hats" data-ajax="false" data-href="#men" data-id="rfapp_mens_hats"><a href="">Hats</a></li>
+           <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#men" data-id="rfapp_mens_shoes"><a href="">Shoes & Bags</a></li>
+    <li class="acc-selector" data-title="Ties" data-ajax="false" data-href="#men" data-id="rfapp_mens_ties"><a href="">Ties & Bowties</a></li>
+    <li class="acc-selector" data-title="Watches" data-ajax="false" data-href="#men" data-id="rfapp_mens_jewelry" ><a href="">Watches</a></li>
+    </ul>
+</div>
+       <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-outdoor-app-li-icon.jpg" />Sports & Outdoors</h2>
+<ul class="catselector" data-role="listview" data-filter="true" data-filter-placeholder="Show me only...">
+     <li class="acc-selector" data-title="Activewear" data-ajax="false" data-href="#men" data-id="rfapp_mens_activewear"><a href="">Activewear</a></li>
+       <li class="acc-selector" data-title="Cycling" data-ajax="false" data-href="#men" data-id="rfapp_mens_cycling"><a href="">Cycling Clothing</a></li>
+    <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#men" data-id="rfapp_mens_cycling_shoes"><a href="">Cycling Shoes</a></li>
+        <li class="acc-selector" data-title="Fishing" data-ajax="false" data-href="#men" data-id="rfapp_mens_fishing"><a href="">Fishing Gear</a></li>
+     <li class="acc-selector" data-title="Golf gear" data-ajax="false" data-href="#men" data-id="rfapp_mens_golf"><a href="">Golf Gear</a></li>
+     <li class="acc-selector" data-title="Jackets" data-ajax="false" data-href="#men" data-id="rfapp_hiking_jackets"><a href="">Hiking Jackets</a></li>
+     <li class="acc-selector" data-title="Pants" data-ajax="false" data-href="#men" data-id="rfapp_hiking_pants"><a href="">Hiking Pants</a></li>
+        <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#men" data-id="rfapp_hiking_shoes"><a href="">Hiking Shoes</a></li>
+         <li class="acc-selector" data-title="Tees" data-ajax="false" data-href="#men"  data-id="rfapp_hiking_tees"><a href="">Hiking Tees</a></li>
+    <li class="acc-selector" data-title="Hunting" data-ajax="false" data-href="#men"  data-id="rfapp_mens_hunting"><a href="">Hunting Gear</a></li>
+    <li class="acc-selector" data-title="Board sports" data-ajax="false" data-href="#men"  data-id="rfapp_mens_skiing_skating"><a href="">Skiing & Skating</a></li>
+     <li class="acc-selector" data-title="Water" data-ajax="false" data-href="#men"  data-id="rfapp_mens_waterspors"><a href="">Watersports</a></li>
+    </ul>
+        
+</div>
+        <div id="mensclothing" data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-clothing-app-li-icon.jpg" />Clothing </h2>
+
+<ul class="catselector" data-filter="false" data-role="listview">
+        <li class="acc-selector" data-title="Fashionable" data-ajax="false" data-href="#men" data-id="rfapp_mens_hoodies"><a href="">Hoodies & Sweatshirts</a></li>
+     <li class="acc-selector" data-title="Jackets" data-ajax="false" data-href="#men" data-id="rfapp_mens_jackets"><a href="">Jackets & Coats</a></li>
+         <li class="acc-selector" data-title="Pants" data-ajax="false" data-href="#men" data-id="rfapp_mens_pants"><a href="">Pants & Shorts</a></li>
+    <li class="acc-selector" data-title="Parkas" data-ajax="false" data-href="#men" data-id="rfapp_mens_parkas"><a href="">Parkas</a></li>
+    <li class="acc-selector" data-title="Polos" data-ajax="false" data-href="#men" data-id="rfapp_mens_polos"><a href="">Polos & Tees</a></li>
+      <li class="acc-selector" data-title="Rompers" data-ajax="false" data-href="#men" data-id="rfapp_mens_rompers"><a href="">Rompers</a></li>
+     <li class="acc-selector" data-title="Shirts" data-ajax="false" data-href="#men" data-id="rfapp_mens_shirts"><a href="">Shirts</a></li>
+    <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_swimwear"><a href="">Swimwear</a></li>
+    <li class="acc-selector" data-title="Underwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_underwear"><a href="">Underwear</a></li>    
+    
+            </ul>
+                 
+</div>
+</div>
+  <div data-position="fixed" data data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#weddings" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Wedding</a></li>
+		<li><a href="#women" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Women</a></li>
+        <li><a href="#kids" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Kids</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+        
+        
+        <!--END MENS PAGE-->
+
+        <!--END WOMAN FASHION PAGE-->
+         <!--START WEDDING PAGE-->
+        <div data-role="page" id="weddings" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Weddings</h1>
+     <a href="#" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Weddings</div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div data-role="content">
+            <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/womens-wedding-app-li-icon.jpg" />Women's Wedding </h2>
+
+<ul class="catselector" data-role="listview" ssdata-filter="false">
+        <li class="acc-selector" data-title="Accessories" data-ajax="false" data-href="#weddings" data-id="rfapp_wedding_accessories"><a href="">Accessories</a></li>
+         <li class="acc-selector" data-title="Dresses" data-ajax="false" data-href="#weddings" data-id="rfapp_wedding_dresses"><a href="">Dresses</a></li>
+    <li class="acc-selector" data-title="Bride's Mother" data-ajax="false" data-href="#weddings" data-id="rfapp_mother_ot_bride"><a href="">Mother of the Bride</a></li>
+             <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#weddings" data-id="rfapp_wedding_shoes"><a href="">Shoes</a></li>
+      </ul>       
+</div>
+                  <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/kids-wedding-app-li-icon.jpg" />Kids' Wedding</h2>
+
+<ul class="catselector" data-role="listview" ssdata-filter="false">
+        <li class="acc-selector" data-title="Flower Girls" data-ajax="false" data-href="#weddings" data-id="rfapp_flower_girls"><a href="">Flower Girls</a></li>
+    </ul>       
+</div>
+                <div id="menswedding" data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-wedding-app-li-icon.jpg" />Men's Wedding </h2>
+
+<ul class="catselector" data-role="listview" ssdata-filter="false">    
+     <li class="acc-selector" data-title="Suits" data-ajax="false" data-href="#weddings" data-id="rfapp_mens_suits"><a href="">Blazers & Suits</a></li>
+    <li class="acc-selector" data-title="Clothing" data-ajax="false" data-href="#weddings" data-id="rfapp_mens_wedding_clothing"><a href="">Clothing</a></li>
+     <li class="acc-selector" data-title="Jewelry" data-ajax="false" data-href="#weddings" data-id="rfapp_mens_wedding_jewelry"><a href="">Jewelry</a></li>
+    <li class="acc-selector" data-title="Groom" data-ajax="false" data-href="#weddings" data-id="rfapp_mens_wedding"><a href="">Various</a></li>
+    </ul>       
+</div>
+</div>
+  <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#women" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Women</a></li>
+		<li><a href="#men" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Men</a></li>
+        <li><a href="#kids" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Kids</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+         <!--END WEDDING PAGE-->
+        
+        <!--START KIDS PAGE-->
+        
+        <div data-role="page" id="kids" data-rel="back" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Kids</h1>
+     <a href="#" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Kids</div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div data-role="content">
+<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-theme="b" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/boys-clothing-app-li-icon.jpg" />Boys' CLothing</h2>
+<ul class="catselector" data-role="listview" data-filter="false">
+    <li class="acc-selector" data-title="Clothing Sets" data-ajax="false" data-href="#kids" data-id="rfapp_boys_clothing_sets"><a href="">Clothing Sets</a></li>        
+         <li class="acc-selector" data-title="Fashionable" data-ajax="false" data-href="#kids" data-id="rfapp_boys_hoodies"><a href="">Hoodies & Sweaters</a></li>
+           <li class="acc-selector" data-title="Pants" data-ajax="false" data-href="#kids" data-id="rfapp_boys_pants"><a href="">Pants</a></li>
+    <li class="acc-selector" data-title="Rompers" data-ajax="false" data-href="#kids" data-id="rfapp_boys_rompers"><a href="">Rompers</a></li>
+      <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#kids" data-id="rfapp_boys_shoes" ><a href="">Shoes</a></li>
+      <li class="acc-selector" data-title="Sports" data-ajax="false" data-href="#kids" data-id="rfapp_boys_sports" ><a href="">Sports</a></li>
+    <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#kids" data-id="rfapp_boys_tops"><a href="">Tops</a></li>
+  
+    </ul>
+</div>
+       <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/girls-clothing-app-li-icon.jpg" />Girls' Clothing</h2>
+<ul class="catselector" data-role="listview" data-filter="true" data-filter-placeholder="Show me only...">
+     <li class="acc-selector" data-title="Clothing sets" data-ajax="false" data-href="#kids" data-id="rfapp_girls_clothingsets"><a href="">Clothing Sets</a></li>
+       <li class="acc-selector" data-title="Dresses" data-ajax="false" data-href="#kids" data-id="rfapp_girls_dresses"><a href="">Dresses</a></li>
+    <li class="acc-selector" data-title="Jewelry" data-ajax="false" data-href="#kids" data-id="rfapp_girls_jewelry"><a href="">Jewelry</a></li>
+    <li class="acc-selector" data-title="One pice" data-ajax="false" data-href="#kids" data-id="rfapp_girls_once_piece"><a href="">One Piece</a></li>
+        <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#kids" data-id="rfapp_girls_swimwear"><a href="">Swimwear</a></li>
+      <li class="acc-selector" data-title="Comfort Shoes" data-ajax="false" data-href="#kids" data-id="rfapp_girls_bags_shoes"><a href="">Shoes</a></li> 
+    <li class="acc-selector" data-title="Sports" data-ajax="false" data-href="#kids" data-id="rfapp_girls_sports "><a href="">Sports & Outdoors</a></li>
+    <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#kids" data-id="rfapp_girls_tops"><a href="">Tops</a></li>      
+        <li class="acc-selector" data-title="Weddings" data-ajax="false" data-href="#kids" data-id="rfapp_girls_weddings_events"><a href="">Weddings & Events</a></li>         
+    </ul>         
+</div>
+        <div id="kidsclothing" data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-clothing-app-li-icon.jpg" />Clothing </h2>
+
+<ul class="catselector" data-role="listview" data-filter="false">
+        <li class="acc-selector" data-title="Fashionable" data-ajax="false" data-href="#men" data-id="rfapp_mens_hoodies"><a href="">Hoodies & Sweatshirts</a></li>
+     <li class="acc-selector" data-title="Jackets" data-ajax="false" data-href="#men" data-id="rfapp_mens_jackets"><a href="">Jackets & Coats</a></li>
+         <li class="acc-selector" data-title="Pants" data-ajax="false" data-href="#men" data-id="rfapp_mens_pants"><a href="">Pants & Shorts</a></li>
+    <li class="acc-selector" data-title="Parkas" data-ajax="false" data-href="#men" data-id="rfapp_mens_parkas"><a href="">Parkas</a></li>
+    <li class="acc-selector" data-title="Polos" data-ajax="false" data-href="#men" data-id="rfapp_mens_polos"><a href="">Polos & Tees</a></li>
+      <li class="acc-selector" data-title="Rompers" data-ajax="false" data-href="#men" data-id="rfapp_mens_rompers"><a href="">Rompers</a></li>
+     <li class="acc-selector" data-title="Shirts" data-ajax="false" data-href="#men" data-id="rfapp_mens_shirts"><a href="">Shirts</a></li>
+    <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_swimwear"><a href="">Swimwear</a></li>
+    <li class="acc-selector" data-title="Underwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_underwear"><a href="">Underwear</a></li>
+    </ul>
+            
+        
+</div>
+</div>
+  <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#weddings" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Wedding</a></li>
+		<li><a href="#women" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Women</a></li>
+        <li><a href="#men" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Men</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+        
+                <!--END KIDS PAGE-->
+
+         <!--START DYNAMIC ITEMS PAGE-->
+                <div data-role="page" id="fashionitems" data-theme="d">
+    
+  <div data-role="header" data-theme="b" data-add-back-btn="true">
+    <button data-icon="back" class="backbtn">Back</button><h1 class="mainheading"></h1>
+    <a href="#" data-icon="search">Search</a>
+</div>
+    <div class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading"></div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+<div class="fashionlistitems" data-role="content">
+        <p></p>
+   <ul id="listviewers" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter results..." data-filter-theme="b">
+</ul>
+ </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		        <li><a id="scrolldown" href="#" data-transition="flip" data-icon="arrow-d" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Scroll down</a></li>
+		<li><a id="scrollup" href="#" data-transition="flip" data-icon="arrow-u" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Back to Top</a></li>
+      	</ul>
+</div>
+  </div>
+</div>
+                 <!--END DYNAMIC ITEMS PAGE-->
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+      </body>
+</html>
