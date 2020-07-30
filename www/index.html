@@ -27,7 +27,7 @@
   <div data-role="header" data-theme="b">
     <a href="#" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
     <h1>Reedfrog</h1>
-    <a href="#" data-icon="search">Search</a>
+    <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -76,7 +76,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Women</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -138,7 +138,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Men</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -214,7 +214,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Weddings</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -269,7 +269,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Kids</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -329,13 +329,57 @@
 </div>
         
                 <!--END KIDS PAGE-->
+        
+                
+        
+        <!--START SEARCH PAGE-->
+        <div data-role="page" id="search" data-rel="back" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Search</h1>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Search</div>
+        <div class="slogan">Find what you love fast</div>
+    </div>
+  
+<div data-role="content">
+<form class="form-controls">
+    <ul data-role="listview" data-inset="true">
+        <li class="ui-field-contain">
+            <label for="name2">Search</label>
+            <input type="text" name="search" id="searchitems" value="" placeholder="What are you looking for?" data-clear-btn="true">
+        </li>
+            <li class="ui-field-contain">
+              <div class="ui-grid-solo">
+	<div class="ui-block-a"><button id="searchbtn" type="v" data-theme="b">Search</button></div>
+</div>           
+        </li>
+    </ul>
+</form>
+
+</div>
+  <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#weddings" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Wedding</a></li>
+		<li><a href="#women" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Women</a></li>
+        <li><a href="#men" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Men</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+        
+        <!--END SEARCH PAGE-->
 
          <!--START DYNAMIC ITEMS PAGE-->
                 <div data-role="page" id="fashionitems" data-theme="d">
     
   <div data-role="header" data-theme="b" data-add-back-btn="true">
     <button data-icon="back" class="backbtn">Back</button><h1 class="mainheading"></h1>
-    <a href="#" data-icon="search">Search</a>
+    <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
