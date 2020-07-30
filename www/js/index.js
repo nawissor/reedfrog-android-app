@@ -54,8 +54,8 @@ $(document).ready(function(){
              
          },
 		success: function(data){
-				   if(data.results.length > 1) {
-                       
+            $(location).attr('href', '#fashionitems');   
+				   if(data.results.length > 1) {                    
                     $(".heading").text(dataTitle);
                     $(".mainheading").text(dataTitle);
 				    for (var i = 0; i < data.results.length; i++) {	                        
@@ -72,7 +72,7 @@ $(document).ready(function(){
                         var imageUrl = data.results[i].image_url;
                         var productUrl = data.results[i].product_url;
                       $( "#listviewers" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
-                        $(location).attr('href', '#fashionitems');
+                        
                        
                       
                                   
