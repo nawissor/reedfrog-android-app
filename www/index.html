@@ -354,11 +354,12 @@
         </li>
             <li class="ui-field-contain">
               <div class="ui-grid-solo">
-	<div class="ui-block-a"><button id="searchbtn" type="v" data-theme="b">Search</button></div>
+	<div class="ui-block-a"><button id="searchbtn" data-href="#search" type="v" data-theme="b">Search</button></div>
 </div>           
         </li>
     </ul>
 </form>
+
 
 </div>
   <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
@@ -373,6 +374,36 @@
 </div>
         
         <!--END SEARCH PAGE-->
+        <!--START DYNAMIC SEARCH PAGE -->
+        <div data-role="page" id="searchlistitems" data-theme="d">
+    
+  <div data-role="header" data-theme="b" data-add-back-btn="true">
+    <button data-icon="back" class="backbtn">Back</button><h1 class="mainheading"></h1>
+    <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
+</div>
+    <div class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading"></div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+    <div class="searchlistitems" data-role="content">
+        <p></p>
+   <ul id="searchlistview" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter results..." data-filter-theme="b">
+</ul>
+ </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		        <li><a id="scrolldown" href="#" data-transition="flip" data-icon="arrow-d" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Scroll down</a></li>
+		<li><a id="scrollup" href="#" data-transition="flip" data-icon="arrow-u" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Back to Top</a></li>
+      	</ul>
+</div>
+  </div>
+        </div>
+        
+        <!--END DYNAMIC SEARCH PAGE-->
 
          <!--START DYNAMIC ITEMS PAGE-->
                 <div data-role="page" id="fashionitems" data-theme="d">

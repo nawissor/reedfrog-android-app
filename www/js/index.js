@@ -98,7 +98,9 @@ $(document).ready(function(){
       $("#searchbtn").on('click', function(event){
           event.preventDefault();
        $(this).addClass("ui-btn-active ui-state-persist");
-       var value = $('#searchitems').val();       
+       var value = $('#searchitems').val();   
+          var currentpos = $(this).data('href');
+        window.sessionStorage.setItem('currentPage', currentpos);
        window.sessionStorage.setItem('searchString', value);    
           $('.form-controls').hide();
                         $.mobile.loading( "show", {
@@ -111,7 +113,7 @@ $(document).ready(function(){
       var searchString ="searchString="+value;   
        
     $.ajax({
-        type: "POST",crossDomain: true, cache: false,
+        type: "GET",crossDomain: true, cache: false,
         url: 'https://reedfrog.com/api/app/search-function.php',
         data: searchString,
 		dataType:'JSON',  
@@ -119,6 +121,7 @@ $(document).ready(function(){
              
          },
 		success: function(data){
+             $(location).attr('href', '#searchlistitems'); 
               if(data.results.length > 1) {                    
                     $(".heading").text(value);
                     $(".mainheading").text(value);
@@ -135,8 +138,9 @@ $(document).ready(function(){
                         }
                         var imageUrl = data.results[i].image_url;
                         var productUrl = data.results[i].product_url;
-                      $( "#listviewers" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
-                        
+                                               
+                      $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
+                       
                        
                       
                                   
