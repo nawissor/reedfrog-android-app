@@ -101,7 +101,7 @@ $(document).ready(function(){
        var value = $('#searchitems').val();   
           var currentpos = $(this).data('href');
         window.sessionStorage.setItem('currentPage', currentpos);
-       window.sessionStorage.setItem('searchString', value);    
+       window.localStorage.setItem('searchString', value);    
           $('.form-controls').hide();
                         $.mobile.loading( "show", {
   text: "Finding " +value,
@@ -141,13 +141,98 @@ $(document).ready(function(){
                                                
                       $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
                        
-                       
+                  
                       
                                   
                         
                     }
 				 
             }
+            
+                if(data.navigation.nextPageUri) {
+                    
+                    var nextlink = data.navigation.nextPageUri;
+                     var prevlink = data.navigation.prevPageUri;     
+                          $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
+                    //START NAVIGATION
+                   $("#nextBtn").on('click', function(event){
+          event.preventDefault();
+       $(this).addClass("ui-btn-active ui-state-persist");
+       var value = $('#searchitems').val();   
+          var currentpos = $(this).data('href');
+        window.sessionStorage.setItem('currentPage', currentpos);
+       window.localStorage.setItem('searchString', value); 
+                       
+          $('.form-controls').hide();
+                        $.mobile.loading( "show", {
+  text: "Finding " +value,
+  textVisible: true,
+  theme: "b"
+  
+});
+
+      var searchString ="searchString="+value+"&page="+nextlink;   
+       
+    $.ajax({
+        type: "GET",crossDomain: true, cache: false,
+        url: 'https://reedfrog.com/api/app/search-function.php',
+        data: searchString,
+		dataType:'JSON',  
+         beforeSend: function(){ 
+             
+         },
+		success: function(data){
+             $('#searchlistview').empty();
+              if(data.results.length > 1) {   
+                           $.mobile.loading( "hide");
+				    for (var i = 0; i < data.results.length; i++) {
+                                                
+                      var itemName = data.results[i].product_name;
+                        var originalprice = parseFloat(data.results[i].original_price).toFixed(2);
+                        var itemPrice = parseFloat(data.results[i].current_price).toFixed(2);
+                        
+                        if(originalprice<itemPrice) {
+                            var pricediv = "<p style='color: orangered; text-decoration: line-through; font-size: 14px;'>"+originalprice+"</p>";
+                        } else {
+                            pricediv = "<p style='display: none; text-decoration: line-through; font-size: 14px;'>"+originalprice+"</p>";
+                        }
+                        var imageUrl = data.results[i].image_url;
+                        var productUrl = data.results[i].product_url;
+                                               
+                      $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
+                        $('#searchlistview').listview('refresh').trigger('create');
+                  
+                      
+                                  
+                        
+                    }
+				 
+            }
+            
+                if(data.navigation.nextPageUri) {
+                    
+                    var nextlink = data.navigation.nextPageUri;
+                     var prevlink = data.navigation.prevPageUri;   
+                          $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
+                    
+                      }
+            
+             if(!data.results)
+            {
+				
+			  alert('no results returned');
+			
+               
+            }
+        }
+		
+    });
+      	
+
+        });
+     
+                     //END NAVIGATION      
+                      }
             
              if(!data.results)
             {
@@ -209,6 +294,40 @@ $(document).delegate('#fashionitems', 'pageshow', function (){
           var currentPage = window.sessionStorage.getItem('currentPage');
           
           $.mobile.navigate(currentPage, { transition: 'pop' });
+          window.sessionStorage.removeItem('currentPage');
+                                  $.mobile.loading( "show", {
+  text: "Freeing up space",
+  textVisible: true,
+  theme: "b"
+  
+});
+          location.reload(true);
+          
+          
+});  
+}); 
+$(document).delegate('#searchlistitems', 'pageshow', function (){ 
+      $(document).on('click', '.backbtn', function(){ 
+                window.localStorage.removeItem('searchString');
+              var currentPage = window.sessionStorage.getItem('currentPage');
+          
+          $.mobile.navigate(currentPage, { transition: 'slidedown' });
+          window.sessionStorage.removeItem('currentPage');
+                                  $.mobile.loading( "show", {
+  text: "Freeing up space",
+  textVisible: true,
+  theme: "b"
+  
+});
+          location.reload(true);
+          
+          
+});  
+          $(document).on('click', '.searchbtn', function(){ 
+                window.localStorage.removeItem('searchString');
+              var currentPage = window.sessionStorage.getItem('currentPage');
+          
+          $.mobile.navigate(currentPage, { transition: 'slidedown' });
           window.sessionStorage.removeItem('currentPage');
                                   $.mobile.loading( "show", {
   text: "Freeing up space",
