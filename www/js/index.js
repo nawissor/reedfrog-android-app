@@ -97,11 +97,12 @@ $(document).ready(function(){
     
       $("#searchbtn").on('click', function(event){
           event.preventDefault();
+          
        $(this).addClass("ui-btn-active ui-state-persist");
        var value = $('#searchitems').val();   
           var currentpos = $(this).data('href');
         window.sessionStorage.setItem('currentPage', currentpos);
-       window.localStorage.setItem('searchString', value);    
+       window.sessionStorage.setItem('searchString', value);   
           $('.form-controls').hide();
                         $.mobile.loading( "show", {
   text: "Finding " +value,
@@ -125,7 +126,7 @@ $(document).ready(function(){
               if(data.results.length > 1) {                    
                     $(".heading").text(value);
                     $(".mainheading").text(value);
-				    for (var i = 0; i < data.results.length; i++) {	                        
+                      for (var i = 0; i < data.results.length; i++) {	                        
                         
                       var itemName = data.results[i].product_name;
                         var originalprice = parseFloat(data.results[i].original_price).toFixed(2);
@@ -151,27 +152,54 @@ $(document).ready(function(){
             
                 if(data.navigation.nextPageUri) {
                     
-                    var nextlink = data.navigation.nextPageUri;
-                     var prevlink = data.navigation.prevPageUri;     
+                     var nextlink = data.navigation.nextPageUri;
+                     var prevlink = data.navigation.prevPageUri; 
+                    window.sessionStorage.setItem('nextpageUri', nextlink);
+                    window.sessionStorage.setItem('prevpageUri', prevlink);
                           $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
-                    //START NAVIGATION
-                   $("#nextBtn").on('click', function(event){
-          event.preventDefault();
-       $(this).addClass("ui-btn-active ui-state-persist");
-       var value = $('#searchitems').val();   
-          var currentpos = $(this).data('href');
-        window.sessionStorage.setItem('currentPage', currentpos);
-       window.localStorage.setItem('searchString', value); 
-                       
-          $('.form-controls').hide();
-                        $.mobile.loading( "show", {
+                    
+       
+                      }
+    
+            
+             if(!data.results)
+            {
+				
+			  alert('no results returned');
+			
+               
+            }
+        }
+		
+    });
+      	
+ 
+        });
+    
+                              //START NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
+            $('#navcontrols').on('click', '#nextBtn', function(event){
+                       event.preventDefault();
+                        sessionStorage.reloadAfterPageLoad = true;
+        window.location.reload();
+    } 
+);
+    $( function () {
+        if ( sessionStorage.reloadAfterPageLoad ) {
+                
+          
+        var value =  window.sessionStorage.getItem('searchString'); 
+        var nextlink = window.sessionStorage.getItem('nextpageUri');
+        
+       
+       
+        $.mobile.loading( "show", {
   text: "Finding " +value,
   textVisible: true,
   theme: "b"
   
 });
 
-      var searchString ="searchString="+value+"&page="+nextlink;   
+var searchString ="searchString="+value+"&page="+nextlink;   
        
     $.ajax({
         type: "GET",crossDomain: true, cache: false,
@@ -180,10 +208,14 @@ $(document).ready(function(){
 		dataType:'JSON',  
          beforeSend: function(){ 
              
+
+             
          },
 		success: function(data){
+           
              $('#searchlistview').empty();
-              if(data.results.length > 1) {   
+            $('#navcontrols').empty();
+             if(data.results.length > 1) {   
                            $.mobile.loading( "hide");
 				    for (var i = 0; i < data.results.length; i++) {
                                                 
@@ -211,12 +243,16 @@ $(document).ready(function(){
             
                 if(data.navigation.nextPageUri) {
                     
-                    var nextlink = data.navigation.nextPageUri;
-                     var prevlink = data.navigation.prevPageUri;   
+                   var nextlink = data.navigation.nextPageUri;
+                     var prevlink = data.navigation.prevPageUri; 
+                    window.sessionStorage.setItem('nextpageUri', nextlink);
+                    window.sessionStorage.setItem('prevpageUri', prevlink);    
                           $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
-                    
+                    $('#navcontrols').trigger('create');
+       
                       }
             
+                       
              if(!data.results)
             {
 				
@@ -227,26 +263,13 @@ $(document).ready(function(){
         }
 		
     });
-      	
-
-        });
+     sessionStorage.reloadAfterPageLoad = false;
+      }
+    } 
+);
+  
      
-                     //END NAVIGATION      
-                      }
-            
-             if(!data.results)
-            {
-				
-			  alert('no results returned');
-			
-               
-            }
-        }
-		
-    });
-      	
-
-        });
+                     //END NAVIGATION 
      
     
     $("#scrollup").on('click', function() { 
