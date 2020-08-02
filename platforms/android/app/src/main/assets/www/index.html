@@ -27,7 +27,7 @@
   <div data-role="header" data-theme="b">
     <a href="#" data-icon="home" class="ui-btn-active ui-state-persist">Home</a>
     <h1>Reedfrog</h1>
-    <a href="#" data-icon="search">Search</a>
+    <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -76,7 +76,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Women</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -109,10 +109,12 @@
 
 <ul class="catselector" data-role="listview" data-filter="false">
         <li class="acc-selector" data-title="Activewear" data-ajax="false" data-href="#women" data-id="rfapp_womens_activewear"><a href="">Activewear</a></li>
+     <li class="acc-selector" data-title="Blouses" data-ajax="false" data-href="#women" data-id="rfapp_womens_blouses"><a href="">Blouses</a></li>
          <li class="acc-selector" data-title="Clothing" data-ajax="false" data-href="#women" data-id="rfapp_womens_clothing"><a href="">Clothing</a></li>
              <li class="acc-selector" data-title="Dresses" data-ajax="false" data-href="#women" data-id="rfapp_womens_dresses"><a href="">Dresses</a></li>
      <li class="acc-selector" data-title="Intimates" data-ajax="false" data-href="#women" data-id="rfapp_womens_intimates"><a href="">Intimates & Lingerie</a></li>
     <li class="acc-selector" data-title="Plus size" data-ajax="false" data-href="#women" data-id="rfapp_womens_plus"><a href="">Plus size</a></li>
+      <li class="acc-selector" data-title="Skirts" data-ajax="false" data-href="#women" data-id="rfapp_womens_skirts"><a href="">Skirts</a></li>
     <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#women" data-id="rfapp_womens_swim"><a href="">Swimwear</a></li>
     <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#women" data-id="rfapp_womens_tops"><a href="">Tops</a></li>
     </ul>
@@ -136,7 +138,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Men</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -212,7 +214,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Weddings</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -267,7 +269,7 @@
       <div data-role="header" data-theme="b">
     <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
     <h1>Kids</h1>
-     <a href="#" data-icon="search">Search</a>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div  class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
@@ -297,28 +299,20 @@
     <li class="acc-selector" data-title="Jewelry" data-ajax="false" data-href="#kids" data-id="rfapp_girls_jewelry"><a href="">Jewelry</a></li>
     <li class="acc-selector" data-title="One pice" data-ajax="false" data-href="#kids" data-id="rfapp_girls_once_piece"><a href="">One Piece</a></li>
         <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#kids" data-id="rfapp_girls_swimwear"><a href="">Swimwear</a></li>
-      <li class="acc-selector" data-title="Comfort Shoes" data-ajax="false" data-href="#kids" data-id="rfapp_girls_bags_shoes"><a href="">Shoes</a></li>     
+      <li class="acc-selector" data-title="Comfort Shoes" data-ajax="false" data-href="#kids" data-id="rfapp_girls_bags_shoes"><a href="">Shoes</a></li> 
+    <li class="acc-selector" data-title="Sports" data-ajax="false" data-href="#kids" data-id="rfapp_girls_sports "><a href="">Sports & Outdoors</a></li>
     <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#kids" data-id="rfapp_girls_tops"><a href="">Tops</a></li>      
-        <li class="acc-selector" data-title="Shoes" data-ajax="false" data-href="#kids" data-id="rfapp_hiking_shoes"><a href="">Hiking Shoes</a></li>
-         <li class="acc-selector" data-title="Tees" data-ajax="false" data-href="#kids"  data-id="rfapp_hiking_tees"><a href="">Hiking Tees</a></li>
-  
-    </ul>
-        
+        <li class="acc-selector" data-title="Weddings" data-ajax="false" data-href="#kids" data-id="rfapp_girls_weddings_events"><a href="">Weddings & Events</a></li>         
+    </ul>         
 </div>
         <div id="kidsclothing" data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-content-theme="a" data-iconpos="right">
-<h2><img style="vertical-align: middle; padding-right:10px; " src="img/mens-clothing-app-li-icon.jpg" />Clothing </h2>
+<h2><img style="vertical-align: middle; padding-right:10px; " src="img/womens-maternity-app-li-icon.jpg" />Maternity Wear</h2>
 
 <ul class="catselector" data-role="listview" data-filter="false">
-        <li class="acc-selector" data-title="Fashionable" data-ajax="false" data-href="#men" data-id="rfapp_mens_hoodies"><a href="">Hoodies & Sweatshirts</a></li>
-     <li class="acc-selector" data-title="Jackets" data-ajax="false" data-href="#men" data-id="rfapp_mens_jackets"><a href="">Jackets & Coats</a></li>
-         <li class="acc-selector" data-title="Pants" data-ajax="false" data-href="#men" data-id="rfapp_mens_pants"><a href="">Pants & Shorts</a></li>
-    <li class="acc-selector" data-title="Parkas" data-ajax="false" data-href="#men" data-id="rfapp_mens_parkas"><a href="">Parkas</a></li>
-    <li class="acc-selector" data-title="Polos" data-ajax="false" data-href="#men" data-id="rfapp_mens_polos"><a href="">Polos & Tees</a></li>
-      <li class="acc-selector" data-title="Rompers" data-ajax="false" data-href="#men" data-id="rfapp_mens_rompers"><a href="">Rompers</a></li>
-     <li class="acc-selector" data-title="Shirts" data-ajax="false" data-href="#men" data-id="rfapp_mens_shirts"><a href="">Shirts</a></li>
-    <li class="acc-selector" data-title="Swimwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_swimwear"><a href="">Swimwear</a></li>
-    <li class="acc-selector" data-title="Underwear" data-ajax="false" data-href="#men" data-id="rfapp_mens_underwear"><a href="">Underwear</a></li>
-    </ul>
+        <li class="acc-selector" data-title="Bottoms" data-ajax="false" data-href="#kids" data-id="rfapp_maternity_bottoms"><a href="">Bottoms</a></li>
+     <li class="acc-selector" data-title="Dresses" data-ajax="false" data-href="#kids" data-id="rfapp_maternity_dresses"><a href="">Dresses</a></li>
+         <li class="acc-selector" data-title="Tops" data-ajax="false" data-href="#kids" data-id="rfapp_maternity_tops"><a href="">Tops</a></li>
+</ul>
             
         
 </div>
@@ -335,13 +329,96 @@
 </div>
         
                 <!--END KIDS PAGE-->
+        
+                
+        
+        <!--START SEARCH PAGE-->
+        <div data-role="page" id="search" data-rel="back" data-theme="d"> 
+      <div data-role="header" data-theme="b">
+    <a href="index.html" data-direction="up" data-transition="fade" data-icon="home">Home</a>
+    <h1>Search</h1>
+     <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
+</div>
+    <div  class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading">Search</div>
+        <div class="slogan">Find what you love fast</div>
+    </div>
+  
+<div data-role="content">
+<form class="form-controls">
+    <ul data-role="listview" data-inset="true">
+        <li class="ui-field-contain">
+            <label for="name2">Search</label>
+            <input type="text" name="search" id="searchitems" value="" placeholder="What are you looking for?" data-clear-btn="true">
+        </li>
+            <li class="ui-field-contain">
+              <div class="ui-grid-solo">
+	<div class="ui-block-a"><button id="searchbtn" data-href="#search" type="v" data-theme="b">Search</button></div>
+</div>           
+        </li>
+       
+    </ul>
+</form>
+
+
+</div>
+  <div data-position="fixed" data-role="footer" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		<li><a href="#weddings" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Wedding</a></li>
+		<li><a href="#women" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Women</a></li>
+        <li><a href="#men" data-transition="flip" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Men</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+        
+        <!--END SEARCH PAGE-->
+        <!--START DYNAMIC SEARCH PAGE -->
+        <div data-role="page" id="searchlistitems" data-theme="d">
+    
+  <div data-role="header" data-theme="b" data-add-back-btn="true">
+    <button data-icon="back" class="backbtn">Back</button><h1 class="mainheading"></h1>
+    <a class="searchbtn" data-transition="slidedown" href="#search" data-icon="search">Search</a>
+</div>
+    <div class="banner">
+        <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>
+        <div class="heading"></div>
+        <div class="slogan">From your pocket to your closet</div>
+    </div>
+  
+    <div class="searchlistitems" data-role="content">
+        <p></p>
+        
+   <ul id="searchlistview" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter results..." data-filter-theme="b"></ul>    
+      
+                  <div id="backbutton" class="ui-grid-solo"></div>  
+        
+     <div id="nextbutton" class="ui-grid-solo"></div>        
+        
+     
+        <div id="navibar" class="navibar"></div>
+    </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="myfooter" data-theme="b" >
+      <div data-role="navbar" data-iconpos="left">
+	<ul>
+		        <li><a id="scrolldown" href="#" data-transition="flip" data-icon="arrow-d" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Scroll down</a></li>
+        		<li><a id="scrollup" href="#" data-transition="flip" data-icon="arrow-u" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Back to Top</a></li>
+      	</ul>
+</div>
+  </div>
+        </div>
+        
+        <!--END DYNAMIC SEARCH PAGE-->
 
          <!--START DYNAMIC ITEMS PAGE-->
                 <div data-role="page" id="fashionitems" data-theme="d">
     
   <div data-role="header" data-theme="b" data-add-back-btn="true">
     <button data-icon="back" class="backbtn">Back</button><h1 class="mainheading"></h1>
-    <a href="#" data-icon="search">Search</a>
+    <a data-transition="slidedown" href="#search" data-icon="search">Search</a>
 </div>
     <div class="banner">
         <img src="res/icon/android/drawable-hdpi-icon.png" width="72" height="72"/>

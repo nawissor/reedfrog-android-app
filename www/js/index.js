@@ -94,7 +94,7 @@ $(document).ready(function(){
       	
 
         });
-    
+    //START SEARCH BUTTON CLICK EVENT
       $("#searchbtn").on('click', function(event){
           event.preventDefault();
           
@@ -156,8 +156,8 @@ $(document).ready(function(){
                      var prevlink = data.navigation.prevPageUri; 
                     window.sessionStorage.setItem('nextpageUri', nextlink);
                     window.sessionStorage.setItem('prevpageUri', prevlink);
-                          $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
-                    
+                          $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button"  data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
+                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
                                            
        
                       }
@@ -188,15 +188,28 @@ $(document).ready(function(){
  
         });
     
+   //END SEARCH BUTTON CLICK EVENT
+    
                               //START NEXT NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
-            $('#navcontrols').on('click', '#nextBtn', function(event){
+            $('#nextbutton').on('click', '#nextBtn', function(event){
+                             
+        $.mobile.loading( "show", {
+  text: "Loading next set",
+  textVisible: true,
+  theme: "b"
+  
+});
                        event.preventDefault();
-                        sessionStorage.reloadAfterPageLoad = true;
+                if ( sessionStorage.reloadAfterBackClick ) {
+                sessionStorage.removeItem('reloadAfterBackClick');
+                    
+                }
+                        sessionStorage.reloadAfterNextClick = true;
         window.location.reload();
     } 
 );
     $( function () {
-        if ( sessionStorage.reloadAfterPageLoad ) {
+        if ( sessionStorage.reloadAfterNextClick ) {
                 
           
         var value =  window.sessionStorage.getItem('searchString'); 
@@ -204,12 +217,7 @@ $(document).ready(function(){
         
        
        
-        $.mobile.loading( "show", {
-  text: "Finding " +value,
-  textVisible: true,
-  theme: "b"
-  
-});
+
 
 var searchString ="searchString="+value+"&page="+nextlink;   
        
@@ -219,7 +227,6 @@ var searchString ="searchString="+value+"&page="+nextlink;
         data: searchString,
 		dataType:'JSON',  
          beforeSend: function(){ 
-             
 
              
          },
@@ -227,7 +234,9 @@ var searchString ="searchString="+value+"&page="+nextlink;
            
              $('#searchlistview').empty();
             $('#navcontrols').empty();
-             if(data.results.length > 1) {   
+             if(data.results.length > 1) {  
+                   $(".heading").text(value);
+                    $(".mainheading").text(value);
                            $.mobile.loading( "hide");
 				    for (var i = 0; i < data.results.length; i++) {
                                                 
@@ -259,8 +268,10 @@ var searchString ="searchString="+value+"&page="+nextlink;
                      var prevlink = data.navigation.prevPageUri; 
                     window.sessionStorage.setItem('nextpageUri', nextlink);
                     window.sessionStorage.setItem('prevpageUri', prevlink);    
-                          $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
-                    $('#navcontrols').trigger('create');
+                          $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
+                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
+                    $('#backbutton').trigger('create');
+                    $('#nextbutton').trigger('create');
        
                       }
             
@@ -286,13 +297,126 @@ var searchString ="searchString="+value+"&page="+nextlink;
         }
 		
     });
-     sessionStorage.reloadAfterPageLoad = false;
+     sessionStorage.reloadAfterNextClick = false;
       }
     } 
 );
   
      
                      //END NAVIGATION 
+    
+    //START BACK NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
+            $('#backbutton').on('click', '#prevBtn', function(event){
+                        $.mobile.loading( "show", {
+  text: "Loading previous set",
+  textVisible: true,
+  theme: "b"
+  
+});
+                       event.preventDefault();
+                if ( sessionStorage.reloadAfterNextClick ) {
+                sessionStorage.removeItem('reloadAfterNextClick');
+                }
+                        sessionStorage.reloadAfterBackClick = true;
+        window.location.reload();
+    } 
+);
+    $( function () {
+        if ( sessionStorage.reloadAfterBackClick ) {
+                
+          
+        var value =  window.sessionStorage.getItem('searchString'); 
+        var prevlink = (window.sessionStorage.getItem('prevpageUri')-1);
+        
+var searchString ="searchString="+value+"&page="+prevlink;   
+       
+    $.ajax({
+        type: "GET",crossDomain: true, cache: false,
+        url: 'https://reedfrog.com/api/app/search-function.php',
+        data: searchString,
+		dataType:'JSON',  
+         beforeSend: function(){ 
+             
+
+             
+         },
+		success: function(data){
+           
+             $('#searchlistview').empty();
+            $('#navcontrols').empty();
+             if(data.results.length > 1) {   
+                   $(".heading").text(value);
+                    $(".mainheading").text(value);
+                           $.mobile.loading( "hide");
+				    for (var i = 0; i < data.results.length; i++) {
+                                                
+                      var itemName = data.results[i].product_name;
+                        var originalprice = parseFloat(data.results[i].original_price).toFixed(2);
+                        var itemPrice = parseFloat(data.results[i].current_price).toFixed(2);
+                        
+                        if(originalprice<itemPrice) {
+                            var pricediv = "<p style='color: orangered; text-decoration: line-through; font-size: 14px;'>"+originalprice+"</p>";
+                        } else {
+                            pricediv = "<p style='display: none; text-decoration: line-through; font-size: 14px;'>"+originalprice+"</p>";
+                        }
+                        var imageUrl = data.results[i].image_url;
+                        var productUrl = data.results[i].product_url;
+                                               
+                      $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
+                        $('#searchlistview').listview('refresh').trigger('create');
+                  
+                      
+                                  
+                        
+                    }
+				 
+            }
+            
+                if(data.navigation.nextPageUri) {
+                    
+                   var nextlink = data.navigation.nextPageUri;
+                     var prevlink = data.navigation.prevPageUri; 
+                    window.sessionStorage.setItem('nextpageUri', nextlink);
+                    window.sessionStorage.setItem('prevpageUri', prevlink);    
+                                 $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
+                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
+                    $('#backbutton').trigger('create');
+                    $('#nextbutton').trigger('create');
+       
+                      }
+            
+            
+              if(data.navigation.totalItems) {
+                
+                       var firstItem = data.navigation.firstItem;
+                        var lastItem = data.navigation.lastItem;
+                          var totalItems = data.navigation.totalItems;
+                       
+                   $( "#navibar" ).append("Showing " + firstItem + " to " + lastItem + " of " + totalItems + " " + value); 
+                    
+       
+                      }
+            
+                       
+             if(!data.results)
+            {
+				
+			  alert('no results returned');
+			
+               
+            }
+        }
+		
+    });
+     sessionStorage.reloadAfterBackClick = false;
+      }
+    } 
+);
+  
+     
+                     //END NAVIGATION 
+    
+     
      
     
     $("#scrollup").on('click', function() { 
@@ -354,9 +478,16 @@ $(document).delegate('#fashionitems', 'pageshow', function (){
 }); 
 $(document).delegate('#searchlistitems', 'pageshow', function (){ 
       $(document).on('click', '.backbtn', function(){ 
-                window.localStorage.removeItem('searchString');
-              var currentPage = window.sessionStorage.getItem('currentPage');
-          
+                    window.sessionStorage.removeItem('searchString');
+               window.sessionStorage.removeItem('prevpageUri');
+               window.sessionStorage.removeItem('nextpageUri'); 
+                  if ( sessionStorage.reloadAfterNextClick ) {
+                sessionStorage.removeItem('reloadAfterNextClick');
+                }
+                  if ( sessionStorage.reloadAfterBackClick ) {
+                sessionStorage.removeItem('reloadAfterBackClick');
+                }
+              var currentPage = window.sessionStorage.getItem('currentPage');          
           $.mobile.navigate(currentPage, { transition: 'slidedown' });
           window.sessionStorage.removeItem('currentPage');
                                   $.mobile.loading( "show", {
@@ -370,9 +501,16 @@ $(document).delegate('#searchlistitems', 'pageshow', function (){
           
 });  
           $(document).on('click', '.searchbtn', function(){ 
-                window.localStorage.removeItem('searchString');
-              var currentPage = window.sessionStorage.getItem('currentPage');
-          
+                window.sessionStorage.removeItem('searchString');
+               window.sessionStorage.removeItem('prevpageUri');
+               window.sessionStorage.removeItem('nextpageUri'); 
+                  if ( sessionStorage.reloadAfterNextClick ) {
+                sessionStorage.removeItem('reloadAfterNextClick');
+                }
+                  if ( sessionStorage.reloadAfterBackClick ) {
+                sessionStorage.removeItem('reloadAfterBackClick');
+                }
+                 var currentPage = window.sessionStorage.getItem('currentPage');       
           $.mobile.navigate(currentPage, { transition: 'slidedown' });
           window.sessionStorage.removeItem('currentPage');
                                   $.mobile.loading( "show", {
