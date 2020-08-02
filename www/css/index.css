@@ -30,6 +30,18 @@
     font-weight: 300;
 }
 
+.navibar {
+    
+    margin: auto;
+    text-align: center;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #5990BF;
+    font-weight: 600;
+    padding: 15px 0px 5px 0px;
+    line-height: normal;
+}
+
 
 
 

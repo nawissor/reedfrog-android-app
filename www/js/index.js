@@ -141,8 +141,8 @@ $(document).ready(function(){
                         var productUrl = data.results[i].product_url;
                                                
                       $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
-                       
-                  
+                          
+                    
                       
                                   
                         
@@ -157,6 +157,18 @@ $(document).ready(function(){
                     window.sessionStorage.setItem('nextpageUri', nextlink);
                     window.sessionStorage.setItem('prevpageUri', prevlink);
                           $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
+                    
+                                           
+       
+                      }
+            
+            if(data.navigation.totalItems) {
+                
+                       var firstItem = data.navigation.firstItem;
+                        var lastItem = data.navigation.lastItem;
+                          var totalItems = data.navigation.totalItems;
+                       
+                   $( "#navibar" ).append("Showing " + firstItem + " to " + lastItem + " of " + totalItems + " " + value); 
                     
        
                       }
@@ -176,7 +188,7 @@ $(document).ready(function(){
  
         });
     
-                              //START NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
+                              //START NEXT NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
             $('#navcontrols').on('click', '#nextBtn', function(event){
                        event.preventDefault();
                         sessionStorage.reloadAfterPageLoad = true;
@@ -249,6 +261,17 @@ var searchString ="searchString="+value+"&page="+nextlink;
                     window.sessionStorage.setItem('prevpageUri', prevlink);    
                           $( "#navcontrols" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>	<div class="ui-block-b"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
                     $('#navcontrols').trigger('create');
+       
+                      }
+            
+              if(data.navigation.totalItems) {
+                
+                       var firstItem = data.navigation.firstItem;
+                        var lastItem = data.navigation.lastItem;
+                          var totalItems = data.navigation.totalItems;
+                       
+                   $( "#navibar" ).append("Showing " + firstItem + " to " + lastItem + " of " + totalItems + " " + value); 
+                    
        
                       }
             
