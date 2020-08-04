@@ -347,15 +347,20 @@
   
 <div data-role="content">
 <form class="form-controls">
-    <ul data-role="listview" data-inset="true">
+    <ul data-inset="true" data-role="listview" data-theme="c">
         <li class="ui-field-contain">
             <label for="name2">Search</label>
-            <input type="text" name="search" id="searchitems" value="" placeholder="What are you looking for?" data-clear-btn="true">
+            <input type="text" name="search" id="searchitems" value="" placeholder="Show me..." data-clear-btn="true">
         </li>
             <li class="ui-field-contain">
               <div class="ui-grid-solo">
 	<div class="ui-block-a"><button id="searchbtn" data-href="#search" type="v" data-theme="b">Search</button></div>
 </div>           
+        </li>
+                 <li class="ui-field-contain">
+              <label>
+        <input id="showdiscounts" type="checkbox" value="yes" name="checkbox-0">Show me only discounted items
+    </label>          
         </li>
        
     </ul>
@@ -375,6 +380,7 @@
 </div>
         
         <!--END SEARCH PAGE-->
+        
         <!--START DYNAMIC SEARCH PAGE -->
         <div data-role="page" id="searchlistitems" data-theme="d">
     
@@ -393,9 +399,13 @@
         
    <ul id="searchlistview" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter results..." data-filter-theme="b"></ul>    
       
-                  <div id="backbutton" class="ui-grid-solo"></div>  
-        
-     <div id="nextbutton" class="ui-grid-solo"></div>        
+                     
+            
+                        <div class="ui-grid-a">
+                                <div id="backbutton" class="ui-block-a"></div>
+                                <div id="nextbutton" class="ui-block-b"></div>
+                        </div>
+                    
         
      
         <div id="navibar" class="navibar"></div>

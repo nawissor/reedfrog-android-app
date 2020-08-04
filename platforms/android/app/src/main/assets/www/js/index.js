@@ -99,6 +99,11 @@ $(document).ready(function(){
           event.preventDefault();
           
        $(this).addClass("ui-btn-active ui-state-persist");
+          var onlyDiscounts = "";
+          if ($('#showdiscounts').is(":checked"))
+{
+  onlyDiscounts = $('#showdiscounts').val();
+}
        var value = $('#searchitems').val();   
           var currentpos = $(this).data('href');
         window.sessionStorage.setItem('currentPage', currentpos);
@@ -111,7 +116,7 @@ $(document).ready(function(){
   
 });
 
-      var searchString ="searchString="+value;   
+      var searchString ="searchString="+value+"&discounts="+onlyDiscounts;   
        
     $.ajax({
         type: "GET",crossDomain: true, cache: false,
@@ -150,15 +155,15 @@ $(document).ready(function(){
 				 
             }
             
-                if(data.navigation.nextPageUri) {
+                if(data.navigation.totalItems > 59) {
                     
                      var nextlink = data.navigation.nextPageUri;
                      var prevlink = data.navigation.prevPageUri; 
                     window.sessionStorage.setItem('nextpageUri', nextlink);
                     window.sessionStorage.setItem('prevpageUri', prevlink);
-                          $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active ui-state-persist" href="#" data-role="button"  data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
-                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
-                                           
+                          $( "#backbutton" ).append('<a id="prevBtn" href="#" data-role="button"  data-icon="arrow-l" data-iconpos="left">Back</a>'); 
+                          $( "#nextbutton" ).append('<a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
+                          $('#prevBtn').prop('disabled', true);                 
        
                       }
             
@@ -234,7 +239,9 @@ var searchString ="searchString="+value+"&page="+nextlink;
            
              $('#searchlistview').empty();
             $('#navcontrols').empty();
-             if(data.results.length > 1) {   
+             if(data.results.length > 1) {  
+                   $(".heading").text(value);
+                    $(".mainheading").text(value);
                            $.mobile.loading( "hide");
 				    for (var i = 0; i < data.results.length; i++) {
                                                 
@@ -264,13 +271,15 @@ var searchString ="searchString="+value+"&page="+nextlink;
                     
                    var nextlink = data.navigation.nextPageUri;
                      var prevlink = data.navigation.prevPageUri; 
+                    var currentPage = data.navigation.catPage;
+                    var totalPages = data.navigation.totalPages;
                     window.sessionStorage.setItem('nextpageUri', nextlink);
                     window.sessionStorage.setItem('prevpageUri', prevlink);    
-                          $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
-                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
+                          $( "#backbutton" ).append('<a id="prevBtn" href="#" class="ui-btn-active" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>'); 
+                          $( "#nextbutton" ).append('<a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
                     $('#backbutton').trigger('create');
                     $('#nextbutton').trigger('create');
-       
+       if (currentPage === totalPages){$('#nextBtn').prop('disabled', true);$('#nextBtn').removeClass("ui-btn-active");}
                       }
             
               if(data.navigation.totalItems) {
@@ -301,7 +310,7 @@ var searchString ="searchString="+value+"&page="+nextlink;
 );
   
      
-                     //END NAVIGATION 
+                     //END NEXT NAVIGATION 
     
     //START BACK NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
             $('#backbutton').on('click', '#prevBtn', function(event){
@@ -343,6 +352,8 @@ var searchString ="searchString="+value+"&page="+prevlink;
              $('#searchlistview').empty();
             $('#navcontrols').empty();
              if(data.results.length > 1) {   
+                   $(".heading").text(value);
+                    $(".mainheading").text(value);
                            $.mobile.loading( "hide");
 				    for (var i = 0; i < data.results.length; i++) {
                                                 
@@ -370,16 +381,22 @@ var searchString ="searchString="+value+"&page="+prevlink;
             
                 if(data.navigation.nextPageUri) {
                     
+                    
                    var nextlink = data.navigation.nextPageUri;
                      var prevlink = data.navigation.prevPageUri; 
+                    var currentPage = data.navigation.catPage;
+                   
                     window.sessionStorage.setItem('nextpageUri', nextlink);
-                    window.sessionStorage.setItem('prevpageUri', prevlink);    
-                                 $( "#backbutton" ).append('<div class="ui-block-a"><a id="prevBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a></div>'); 
-                          $( "#nextbutton" ).append('<div class="ui-block-a"><a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a></div>'); 
+                    window.sessionStorage.setItem('prevpageUri', prevlink); 
+                    
+                                 $( "#backbutton" ).append('<a id="prevBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>'); 
+                          $( "#nextbutton" ).append('<a id="nextBtn" class="ui-btn-active" href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>'); 
                     $('#backbutton').trigger('create');
                     $('#nextbutton').trigger('create');
-       
+        if (currentPage === 0) { $('#prevBtn').prop('disabled', true);$('#prevBtn').removeClass("ui-btn-active");}
+                    
                       }
+            
             
               if(data.navigation.totalItems) {
                 
@@ -473,7 +490,15 @@ $(document).delegate('#fashionitems', 'pageshow', function (){
 }); 
 $(document).delegate('#searchlistitems', 'pageshow', function (){ 
       $(document).on('click', '.backbtn', function(){ 
-                window.localStorage.removeItem('searchString');
+                    window.sessionStorage.removeItem('searchString');
+               window.sessionStorage.removeItem('prevpageUri');
+               window.sessionStorage.removeItem('nextpageUri'); 
+                  if ( sessionStorage.reloadAfterNextClick ) {
+                sessionStorage.removeItem('reloadAfterNextClick');
+                }
+                  if ( sessionStorage.reloadAfterBackClick ) {
+                sessionStorage.removeItem('reloadAfterBackClick');
+                }
               var currentPage = window.sessionStorage.getItem('currentPage');          
           $.mobile.navigate(currentPage, { transition: 'slidedown' });
           window.sessionStorage.removeItem('currentPage');
@@ -490,7 +515,13 @@ $(document).delegate('#searchlistitems', 'pageshow', function (){
           $(document).on('click', '.searchbtn', function(){ 
                 window.sessionStorage.removeItem('searchString');
                window.sessionStorage.removeItem('prevpageUri');
-               window.sessionStorage.removeItem('nextpageUri');    
+               window.sessionStorage.removeItem('nextpageUri'); 
+                  if ( sessionStorage.reloadAfterNextClick ) {
+                sessionStorage.removeItem('reloadAfterNextClick');
+                }
+                  if ( sessionStorage.reloadAfterBackClick ) {
+                sessionStorage.removeItem('reloadAfterBackClick');
+                }
                  var currentPage = window.sessionStorage.getItem('currentPage');       
           $.mobile.navigate(currentPage, { transition: 'slidedown' });
           window.sessionStorage.removeItem('currentPage');
