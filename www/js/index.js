@@ -24,7 +24,6 @@ function onDeviceReady() {
 
 $(document).ready(function(){
     
-    
 
    $(".catselector li").on('click', function(){
        $(this).addClass("ui-btn-active ui-state-persist");
@@ -488,8 +487,12 @@ $listview.listview('refresh');
 $(this).delegate('input[data-type="search"]', 'keyup', function() {
     if ($listview.children(':visible').not('#no-results').length === 0) {
         $('#no-results').fadeIn(500);
+        
     } else {
+        
         $('#no-results').fadeOut(250);
+         
+        
     }
 });
       $(document).on('click', '.backbtn', function(){ 
@@ -515,10 +518,17 @@ $(document).delegate('#searchlistitems', 'pageshow', function (){
 $listview.append('<li id="no-results" style="display:none; margin:auto; text-align: center;">[No results found]</li>');
 $listview.listview('refresh');
 $(this).delegate('input[data-type="search"]', 'keyup', function() {
+    
     if ($listview.children(':visible').not('#no-results').length === 0) {
         $('#no-results').fadeIn(500);
+          $('#navibar').hide(250);
+         $('#navibuttons').hide(250);
+       
     } else {
         $('#no-results').fadeOut(250);
+        $('#navibar').show(250);
+         $('#navibuttons').show(250);
+        
     }
 });
 

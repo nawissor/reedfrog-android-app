@@ -21,7 +21,7 @@
 <title>Reedfrog</title>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.mobile-1.3.0.min.js"></script>
-    </head>
+          </head>
     <body>
 <div data-role="page" id="startscreen" data-theme="d">
   <div data-role="header" data-theme="b">
@@ -396,12 +396,13 @@
   
     <div class="searchlistitems" data-role="content">
         <p></p>
-        
+      
+            
    <ul id="searchlistview" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter results..."  data-filter-theme="b"></ul>    
       
                      
             
-                        <div class="ui-grid-a">
+                        <div id="navibuttons" class="ui-grid-a">
                                 <div id="backbutton" class="ui-block-a"></div>
                                 <div id="nextbutton" class="ui-block-b"></div>
                         </div>
@@ -412,7 +413,7 @@
       
     </div>
   
-  <div data-role="footer" data-position="fixed" data-id="myfooter" data-theme="b" >
+  <div class="fixed-content" data-role="footer"  data-id="myfooter" data-theme="b" >
       <div data-role="navbar" data-iconpos="left">
 	<ul>
 		        <li><a id="scrolldown" href="#" data-transition="flip" data-icon="arrow-d" data-corners="false" data-shadow="false" data-iconshadow="true"  data-inline="true" class="ui-btn ui-btn-up-a ui-btn-inline">Scroll down</a></li>
