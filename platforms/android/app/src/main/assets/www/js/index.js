@@ -514,10 +514,30 @@ $(this).delegate('input[data-type="search"]', 'keyup', function() {
 });  
 }); 
 $(document).delegate('#searchlistitems', 'pageshow', function (){
+    var typingTimer;                //timer identifier
+var doneTypingInterval = 1000;  //time in ms, 5 second for example
+var $input = $(this).find('input[data-type="search"]');
+
+//on keyup, start the countdown
+$input.on('keyup', function () {
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(doneTyping, doneTypingInterval);
+});
+
+//on keydown, clear the countdown 
+$input.on('keydown', function () {
+  clearTimeout(typingTimer);
+});
+
+//user is "finished typing," do something
+function doneTyping () {
+ document.activeElement.blur();
+ }
     var $listview = $(this).find('[data-role="listview"]');
 $listview.append('<li id="no-results" style="display:none; margin:auto; text-align: center;">[No results found]</li>');
 $listview.listview('refresh');
 $(this).delegate('input[data-type="search"]', 'keyup', function() {
+   
     
     if ($listview.children(':visible').not('#no-results').length === 0) {
         $('#no-results').fadeIn(500);
