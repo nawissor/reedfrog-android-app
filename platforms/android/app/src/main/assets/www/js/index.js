@@ -24,7 +24,6 @@ function onDeviceReady() {
 
 $(document).ready(function(){
     
-    
 
    $(".catselector li").on('click', function(){
        $(this).addClass("ui-btn-active ui-state-persist");
@@ -145,7 +144,8 @@ $(document).ready(function(){
                         var imageUrl = data.results[i].image_url;
                         var productUrl = data.results[i].product_url;
                                                
-                      $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
+                      $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>");
+                        
                           
                     
                       
@@ -371,6 +371,7 @@ var searchString ="searchString="+value+"&page="+prevlink;
                                                
                       $( "#searchlistview" ).append("<li><a href=" + productUrl + " target='_blank'><img src=" +imageUrl+ "><h2>"+itemName+"</h2>"+pricediv+"<p style='color: black; font-size: 14px; font-weight: 500;'>"+itemPrice+"</p></a></li>"); 
                         $('#searchlistview').listview('refresh').trigger('create');
+                       
                   
                       
                                   
@@ -441,6 +442,16 @@ var searchString ="searchString="+value+"&page="+prevlink;
         $(this).removeClass('ui-btn-active');
      });
     
+        $("#upscroll").on('click', function() { 
+                  
+   $('html, body').stop().animate({ scrollTop : 0 }, 400);
+     });
+        $("#downscroll").on('click', function() { 
+                  
+     $('html, body').animate({scrollTop: '+=360px'}, 800);
+        $(this).removeClass('ui-btn-active');
+     });
+    
  
     
 $("#mensclothing").bind("expand", function () {
@@ -470,6 +481,20 @@ $("#mensclothing").bind("expand", function () {
        
 
 $(document).delegate('#fashionitems', 'pageshow', function (){
+        var $listview = $(this).find('[data-role="listview"]');
+$listview.append('<li id="no-results" style="display:none; margin:auto; text-align: center;">[No results found]</li>');
+$listview.listview('refresh');
+$(this).delegate('input[data-type="search"]', 'keyup', function() {
+    if ($listview.children(':visible').not('#no-results').length === 0) {
+        $('#no-results').fadeIn(500);
+        
+    } else {
+        
+        $('#no-results').fadeOut(250);
+         
+        
+    }
+});
       $(document).on('click', '.backbtn', function(){ 
                 window.localStorage.removeItem('queryString');
         window.localStorage.removeItem('dataValue');
@@ -488,8 +513,27 @@ $(document).delegate('#fashionitems', 'pageshow', function (){
           
 });  
 }); 
-$(document).delegate('#searchlistitems', 'pageshow', function (){ 
-      $(document).on('click', '.backbtn', function(){ 
+$(document).delegate('#searchlistitems', 'pageshow', function (){
+    var $listview = $(this).find('[data-role="listview"]');
+$listview.append('<li id="no-results" style="display:none; margin:auto; text-align: center;">[No results found]</li>');
+$listview.listview('refresh');
+$(this).delegate('input[data-type="search"]', 'keyup', function() {
+    
+    if ($listview.children(':visible').not('#no-results').length === 0) {
+        $('#no-results').fadeIn(500);
+          $('#navibar').hide(250);
+         $('#navibuttons').hide(250);
+       
+    } else {
+        $('#no-results').fadeOut(250);
+        $('#navibar').show(250);
+         $('#navibuttons').show(250);
+        
+    }
+});
+
+      $(document).on('click', '.backbtn', function(){
+          
                     window.sessionStorage.removeItem('searchString');
                window.sessionStorage.removeItem('prevpageUri');
                window.sessionStorage.removeItem('nextpageUri'); 
@@ -536,3 +580,8 @@ $(document).delegate('#searchlistitems', 'pageshow', function (){
           
 });  
 }); 
+
+
+
+
+

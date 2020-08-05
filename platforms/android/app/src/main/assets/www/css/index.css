@@ -6,6 +6,7 @@
     width: 90%;
     padding: 0% 5%;
     height: 72px;
+    padding-top:45px;
     
 }
 .heading {
@@ -38,9 +39,28 @@
     font-size: 16px;
     color: #5990BF;
     font-weight: 600;
-    padding: 15px 0px 5px 0px;
+    padding: 15px 0px 45px 0px;
     line-height: normal;
 }
+
+.fixed-content {
+position: fixed !important;
+left: 0px !important;
+right: 0px !important;
+bottom: -1px !important;
+z-index: 999 !important;
+    padding-bottom:2px;
+
+}
+
+.fixed-header {
+position: fixed !important;
+left: 0px !important;
+right: 0px !important;
+top: -1px !important;
+z-index: 999 !important;
+}
+
 
 
 
