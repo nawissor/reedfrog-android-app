@@ -195,15 +195,10 @@ $(document).ready(function(){
     
    //END SEARCH BUTTON CLICK EVENT
     
-                              //START NEXT NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
+                        //START NEXT NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
             $('#nextbutton').on('click', '#nextBtn', function(event){
                              
-        $.mobile.loading( "show", {
-  text: "Loading next set",
-  textVisible: true,
-  theme: "b"
-  
-});
+
                        event.preventDefault();
                 if ( sessionStorage.reloadAfterBackClick ) {
                 sessionStorage.removeItem('reloadAfterBackClick');
@@ -239,7 +234,13 @@ var searchString ="searchString="+value+"&page="+nextlink;
            
              $('#searchlistview').empty();
             $('#navcontrols').empty();
-             if(data.results.length > 1) {  
+             if(data.results.length > 1) {
+                         $.mobile.loading( "show", {
+  text: "Loading next set",
+  textVisible: true,
+  theme: "b"
+  
+});
                    $(".heading").text(value);
                     $(".mainheading").text(value);
                            $.mobile.loading( "hide");
@@ -314,12 +315,7 @@ var searchString ="searchString="+value+"&page="+nextlink;
     
     //START BACK NAVIGATION FROM HERE ONWARDS  FUNCTION FOR EASY VISIBILITY
             $('#backbutton').on('click', '#prevBtn', function(event){
-                        $.mobile.loading( "show", {
-  text: "Loading previous set",
-  textVisible: true,
-  theme: "b"
-  
-});
+
                        event.preventDefault();
                 if ( sessionStorage.reloadAfterNextClick ) {
                 sessionStorage.removeItem('reloadAfterNextClick');
@@ -351,7 +347,13 @@ var searchString ="searchString="+value+"&page="+prevlink;
            
              $('#searchlistview').empty();
             $('#navcontrols').empty();
-             if(data.results.length > 1) {   
+             if(data.results.length > 1) {
+    $.mobile.loading( "show", {
+  text: "Loading previous set",
+  textVisible: true,
+  theme: "b"
+  
+});
                    $(".heading").text(value);
                     $(".mainheading").text(value);
                            $.mobile.loading( "hide");
