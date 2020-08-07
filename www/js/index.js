@@ -48,6 +48,33 @@ window.localStorage.setItem("firstRun", 1);
 			});
     /*END OBTAIN DEVICE DETAILS AND STORE IN LOCALSTORAGE*/
     
+    /*START PUSH SERVICES FOR FIREBASE CLOUD MESSAGING*/
+    var push = PushNotification.init({
+
+
+android: {
+senderID: "138306200011",
+	
+},
+ios: {
+alert: "true",
+badge: "true",
+sound: "true"
+},
+windows: {}
+});
+
+
+push.on('registration', function(data) {
+$("#regid").val(data.registrationId);
+localStorage.setItem('registrationId', data.registrationId);
+});
+push.on('notification', function(data) {
+});
+push.on('error', function(e) {
+});
+    /*START PUSH SERVICES FOR FIREBASE CLOUD MESSAGING*/
+    
 }       
                   function onBackKeyDown(e) {
                       e.preventDefault();

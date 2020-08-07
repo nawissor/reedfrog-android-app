@@ -15,6 +15,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.getAppVersion"
       ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -22,6 +30,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-support-google-services": "1.3.2",
     "phonegap-plugin-multidex": "1.0.0",
     "phonegap-plugin-push": "2.3.0",
-    "cordova-plugin-app-version": "0.1.9"
+    "cordova-plugin-app-version": "0.1.9",
+    "cordova-plugin-device": "2.0.3"
   };
 });

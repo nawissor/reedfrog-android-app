@@ -17,6 +17,9 @@
     },
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
     }
   },
   "dependent_plugins": {
