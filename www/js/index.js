@@ -66,7 +66,6 @@ windows: {}
 
 
 push.on('registration', function(data) {
-$("#regid").val(data.registrationId);
 localStorage.setItem('registrationId', data.registrationId);
 });
 push.on('notification', function(data) {
@@ -94,6 +93,34 @@ push.on('error', function(e) {
 }  
 
 $(document).ready(function(){
+    
+    /*START INSERT DEVICE INFO IN THE DATABASE TABLE */
+    var devicestatus = localStorage.getItem('registrationId');
+if (devicestatus) {
+var deviceid = localStorage.getItem('deviceserial');
+var regid = localStorage.getItem('registrationId');
+var devicemodel = localStorage.getItem('model');
+var deviceplatform = localStorage.getItem('platform');
+var deviceuuid = localStorage.getItem('deviceuuid');	
+var deviceversion = localStorage.getItem('deviceversion');
+var userfp = localStorage.getItem('fingerprint');
+var appversion = localStorage.getItem('appversion');
+var dataString="deviceid="+deviceid+"&regid="+regid+"&devicemodel="+devicemodel+"&deviceplatform="+deviceplatform+"&deviceuuid="+deviceuuid+"&deviceversion="+deviceversion+"&userfp="+userfp+"&appversion="+appversion;
+
+    $.ajax({
+        type: "POST",crossDomain: true, cache: false,
+        url: 'https://reedfrog.com/api/app/insertregid.php',
+        data: dataString,
+		dataType:'text',		
+        success: function(data){
+
+		
+                  }
+    });
+	
+}
+    
+    /*END INSERT DEVICE INFO INTO THE DATABASE TABLE*/
     
 
    $(".catselector li").on('click', function(){

@@ -70,6 +70,16 @@
             }
           ]
         }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
       }
     }
   },
@@ -92,6 +102,9 @@
       "PACKAGE_NAME": "com.reedfrog.shop"
     },
     "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-badge": {
       "PACKAGE_NAME": "com.reedfrog.shop"
     }
   },
@@ -120,6 +133,14 @@
       "clobbers": [
         "device"
       ]
+    },
+    {
+      "id": "cordova-plugin-badge.Badge",
+      "file": "plugins/cordova-plugin-badge/www/badge.js",
+      "pluginId": "cordova-plugin-badge",
+      "clobbers": [
+        "cordova.plugins.notification.badge"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -128,6 +149,7 @@
     "phonegap-plugin-multidex": "1.0.0",
     "phonegap-plugin-push": "2.3.0",
     "cordova-plugin-app-version": "0.1.9",
-    "cordova-plugin-device": "2.0.3"
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-badge": "0.8.8"
   }
 }

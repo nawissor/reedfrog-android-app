@@ -100,6 +100,7 @@ ext {
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../cordova-support-google-services/shop-build.gradle"
 apply from: "../phonegap-plugin-multidex/shop-multidex.gradle"
+apply from: "../cordova-plugin-badge/shop-badge.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()

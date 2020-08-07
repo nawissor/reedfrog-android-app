@@ -20,6 +20,9 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
     }
   },
   "dependent_plugins": {
