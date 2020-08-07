@@ -1,8 +1,52 @@
 document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener("pause", onPause, false);
+document.addEventListener("resume", onResume, false);
+document.addEventListener("backbutton", onBackKeyDown, false);
 function onDeviceReady() {
-       console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+/*START FIRST RUN EVENT IF THE DEVICE HAS RUN FOR THE FIRST TIME*/
+if(window.localStorage.getItem("firstRun") != 1) {
+window.localStorage.setItem("firstRun", 1);
+	
+   $.ajax({
+        type: "POST",crossDomain: true, cache: false,
+        url: 'https://api.ipify.org?format=jsonp&callback=?',
+		dataType:'JSON',		
+        success: function(data){
+			
+			     if(data.ip != "")		
+			
+            {
+	        var deviceip = data.ip;	    
+			localStorage.setItem('deviceIp',deviceip);
+               
+            }
 
-     	   document.addEventListener("backbutton", onBackKeyDown, false);
+		
+                  }
+    });	
+     
+	
+}
+/*END FIRST RUN EVENT IF THE DEVICE HAS RUN FOR THE FIRST TIME*/
+
+    /*START OBTAIN DEVICE DETAILS AND STORE IN LOCALSTORAGE*/
+    var devicemodel = device.model;
+    localStorage.setItem('model', devicemodel);		
+    var devicecordova = device.cordova;
+    var deviceplatform = device.platform;
+    localStorage.setItem('platform', deviceplatform);		
+    var deviceuuid = device.uuid;
+    localStorage.setItem('deviceuuid', deviceuuid);		
+    var devicevirtual = device.isVirtual;
+    var deviceserial = device.serial;
+    localStorage.setItem('deviceserial', deviceserial);		
+    var deviceversion = device.version;
+    localStorage.setItem('deviceversion',deviceversion);
+    
+    		cordova.getAppVersion(function (version) {
+			   localStorage.setItem('appversion', version);				
+			});
+    /*END OBTAIN DEVICE DETAILS AND STORE IN LOCALSTORAGE*/
     
 }       
                   function onBackKeyDown(e) {

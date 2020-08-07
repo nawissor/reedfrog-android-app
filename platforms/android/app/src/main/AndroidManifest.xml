@@ -9,7 +9,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:exported="true" android:name="com.adobe.phonegap.push.PushHandlerActivity" android:permission="${applicationId}.permission.PushHandlerActivity" />
+        <activity android:exported="true" android:name="com.adobe.phonegap.push.PushHandlerActivity" android:permission="$com.reedfrog.shop.permission.PushHandlerActivity" />
         <receiver android:name="com.adobe.phonegap.push.BackgroundActionButtonHandler" />
         <receiver android:name="com.adobe.phonegap.push.PushDismissedHandler" />
         <service android:name="com.adobe.phonegap.push.FCMService">
@@ -26,4 +26,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <permission android:name="$com.reedfrog.shop.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+<uses-permission android:name="$com.reedfrog.shops.permission.C2D_MESSAGE"/>
 </manifest>

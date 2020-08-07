@@ -14,6 +14,9 @@
       "ANDROID_SUPPORT_V13_VERSION": "27.+",
       "FCM_VERSION": "17.0.+",
       "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
     }
   },
   "dependent_plugins": {
