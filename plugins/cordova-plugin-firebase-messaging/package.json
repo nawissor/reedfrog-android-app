@@ -1,0 +1,67 @@
+{
+  "_from": "cordova-plugin-firebase-messaging@4.5.2",
+  "_id": "cordova-plugin-firebase-messaging@4.5.2",
+  "_inBundle": false,
+  "_integrity": "sha512-KNELvPSLu8LAg6gvqChqY+odMhmJGhJYwdnzObdQD2jhe2oWFx7WJpnYOESxF1hxrvD5U2bHER2PzjNKfiSHQg==",
+  "_location": "/cordova-plugin-firebase-messaging",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-firebase-messaging@4.5.2",
+    "name": "cordova-plugin-firebase-messaging",
+    "escapedName": "cordova-plugin-firebase-messaging",
+    "rawSpec": "4.5.2",
+    "saveSpec": null,
+    "fetchSpec": "4.5.2"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-messaging/-/cordova-plugin-firebase-messaging-4.5.2.tgz",
+  "_shasum": "1e989bf863681540ed5c4b94bd8e212f92b7ea60",
+  "_spec": "cordova-plugin-firebase-messaging@4.5.2",
+  "_where": "c:\\xampp\\htdocs\\apps\\reedfrog",
+  "author": {
+    "name": "Maksim Chemerisuk",
+    "email": "chemerisuk@gmail.com",
+    "url": "https://github.com/chemerisuk"
+  },
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-messaging/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-firebase-messaging",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for Firebase Messaging",
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-messaging#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "push",
+    "fcm",
+    "gcm",
+    "messaging",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-firebase-messaging",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-messaging.git"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+  },
+  "version": "4.5.2"
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; img-src * data:; script-src * 'self' 'unsafe-inline' 'unsafe-eval' *.reedfrog.com ">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+         <link rel="stylesheet" href="css/themes/reedfrogshop.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link href="css/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" type="text/css">
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>  
+<title>Reedfrog Shop</title> 
+    </head>
+    <body>
+<div data-role="page" id="home">
+  <div data-role="header" data-theme="f">
+      <a href="#" data-icon="homeicon" data-iconpos="notext">Home</a>
+       <a href="#homeSubMenu" data-transition="slideup" data-rel="popup" data-position-to="#codeSample" data-icon="menuicon" data-iconpos="notext" data-prefetch>Menu</a><div id="menuCounter" class="notifications">2</div>
+    <h1 class="heading">Reedfrog</h1>	  
+  </div>	
+  <div data-theme="a" data-role="content">
+	  <pre id="codeSample"></pre>
+ <div class="ui-grid-solo"><div data-status="#3F729B" data-color="f" data-title="Men's Desirable Fashion" data-id="Men" class="ui-block-a featuredcollection"><img src="img/app-mens-collection.jpg"  alt=""/></div>
+	 <div data-status="#990933" data-color="c" data-title="Women's Desirable Fashion" data-id="Women" class="ui-block-a featuredcollection"><img src="img/app-womens-collection.jpg"  alt=""/></div>
+	  <div data-status="#C8232C" data-color="e" data-title="Girls' Desirable Fashion" data-id="Girls" class="ui-block-a featuredcollection"><img src="img/app-girls-collection.jpg"  alt=""/></div>
+	 <div data-status="#00acee" data-color="d" data-title="Boys' Desirable Fashion" data-id="Boys" class="ui-block-a featuredcollection"><img src="img/app-boys-collection.jpg"  alt=""/></div>
+	  	</div>	
+	  <h2 style="text-align: center;">More from ReedfrogShop</h2>
+	  <div id="homecollection" class="ui-grid-a">		   
+     </div>
+	  <div data-role="controlgroup" data-theme="d">
+       <a id="homepagemorebtn" href="#" data-role="button" data-icon="plus" data-iconpos="right">More</a>
+      </div>
+	</div>		
+		<div data-role="popup" id="homeSubMenu" data-theme="g" data-overlay-theme="f" class="ui-popup ui-corner-all ui-overlay-shadow ui-body-a">
+		  <ul data-role="listview" data-inset="true" data-theme="g" style="min-width:300px;">
+			  <li data-role="list-divider" style="text-align: center;">Reedfrog Fashion Menu</li>
+		     <li data-icon="false" data-status="#00ACEE" data-color="d" data-title="Men's Desirable Fashion" data-id="Men" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center;" href="#"><h3>Men's Fashion</h3></a></li>
+		    <li data-icon="false" data-status="#990933" data-color="c" data-title="Women's Desirable Fashion" data-id="Women" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center;" href="#"><h3>Women's Fashion</h3></a></li>
+			    <li data-icon="false" data-status="#C8232C" data-color="e" data-title="Girls' Desirable Fashion" data-id="Girls" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center;" href="#"><h3>Girls' Clothing</h3></a></li>
+				   	  <li data-icon="false" data-status="#00acee" data-color="d" data-title="Boys' Desirable Fashion" data-id="Boys" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center;" href="#"><h3>Boys' Clothing</h3></a></li>
+				   <li data-icon="false" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child"><a id="gotoOffers" style="text-align: center; vertical-align: super;" href="#"><h3>View Offers<span id="offerCounter" class="counters"></span></h3></a></li>
+				     <li data-icon="false" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child"><a data-rel="back" style="text-align: center;" href="#"><h3>Cancel</h3></a></li>	
+	      </ul>					
+	      </div>
+ </div>
+<div data-role="page" id="itemprview">
+  <div data-role="header" data-theme="f">
+      <a href="#" class="backhome" data-icon="homeicon" data-ajax="false" data-iconpos="notext">Home</a>
+       <a id="itemBackBtn" data-transition="slidedown" data-icon="backicon" data-iconpos="notext" data-prefetch>Search</a>
+    <h1 id="itemHeading" class="heading">Reedfrog</h1>
+  </div>
+  <div data-theme="a" data-role="content">
+	  <h2 id="itemName" style="text-align: center;"></h2>
+	   <div class="ui-grid-solo itemimage"><div id="itemImage" class="ui-block-a"></div></div>
+	     <div  class="ui-grid-solo">
+	    <div id="itemDescription" class="ui-block-a itemdesc"></div>
+    </div>
+	    <div data-role="controlgroup">
+			<a data-icon="myapp-cart" data-theme="b" id="buyHere" href="#" target="_blank" data-role="button"  data-iconpos="right">Buy here</a>
+			<a data-id="" data-url="" data-icon="myapp-share" data-theme="f" id="socialShare" href="#" data-role="button" data-iconpos="right">Show your friends</a></div>
+</div>
+		</div>
+		<div data-role="page" id="itemsprview"> 
+  <div data-position="fixed" id="collectionheader" data-role="header" data-theme="">
+      <a href="#" class="backhome" data-icon="homeicon" data-ajax="false" data-iconpos="notext">Home</a>
+       <a id="subMenuOpen" href="#" data-rel="popup" data-transition="slidedown" data-icon="menuicon" data-iconpos="notext">Search</a>
+    <h1 id="itemsHeading" class="heading">Reedfrog</h1>
+  </div>
+  <div data-theme="a" data-role="content">
+	  <h2 id="collectionName" style="text-align: center;"></h2>
+	  <div id="fashioncollection" class="ui-grid-a">		   
+     </div>
+	  <div id="collectionsGroup" data-role="controlgroup" data-theme="f">
+       <a id="collectionmorebutton" href="#" data-role="button" data-icon="plus" data-iconpos="right">More</a>
+      </div>
+</div>			
+			<div data-role="popup" id="Men" data-theme="g" class="ui-popup ui-corner-all ui-overlay-shadow ui-body-a">
+			  <ul data-theme="g" data-role="listview" style="min-width:300px;">
+				  <li data-status="#00ACEE" data-color="d" data-title="Men's Desirable Fashion" data-id="Men" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center; font-weight: 600!important; font-size: 16px; height: 24px!important; line-height: 24px!important;" href="#">Men's Fashion</a></li>
+			    <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Accessories" data-id="accessories" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Accessories</a></li>
+				     <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Clothing" data-id="clothing" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Clothing</a></li>
+				  <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Jewelry" data-id="jewelry" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Jewelry</a></li>
+				     <li class="subcolletion" data-status="#990933" data-color="c" data-title="Men's Sale" data-id="sale" data-icon="myapp-right" data-iconpos="right"><a style="color: #990933!important; font-weight: 600!important;" href="#">Men's SALE</a></li>
+				   <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Shoes & Bags" data-id="shoes" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Shoes & Bags</a></li>
+			       <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Sports" data-id="sports" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Sports</a></li>
+				   <li class="subcolletion" data-status="#00ACEE" data-color="d" data-title="Men's Wedding" data-id="wedding" data-icon="myapp-right" data-iconpos="right"><a href="#">Men's Wedding</a></li>
+				  
+		      </ul>			
+	      </div>
+					<div data-role="popup" id="Women" data-theme="g" class="ui-popup ui-corner-all ui-overlay-shadow ui-body-a">
+			  <ul data-theme="g" data-role="listview" style="min-width:300px;">
+				  <li data-status="#990933" data-color="c" data-title="Women's Desirable Fashion" data-id="Women" data-role="divider" data-theme="g" class="ui-listview-item ui-listview-item-static ui-body-a ui-first-child featuredcollection"><a style="text-align: center; font-weight: 600!important; font-size: 16px; height: 24px!important; line-height: 24px!important;" href="#">Women's Fashion</a></li>
+			    <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Accessories" data-id="womenaccessories" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Accessories</a></li>
+				    <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Bags" data-id="womenbags" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Bags</a></li>
+				     <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Beauty" data-id="womenbeauty" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Beauty</a></li>
+				  <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Glasses" data-id="womenglasses" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Glasses</a></li>
+				   <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Jewelry" data-id="womenjewelry" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Jewelry</a></li>
+				     <li class="subcolletion" data-status="#990933" data-color="c" data-title="Women's Sale" data-id="womensale" data-icon="myapp-right" data-iconpos="right"><a style="color: #990933!important; font-weight: 600!important;" href="#">Womens's SALE</a></li>
+				   <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Shoes" data-id="womenshoes" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Shoes</a></li>
+			       <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Sports" data-id="womensports" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Sports</a></li>
+				   <li class="subcolletion" data-status="#990933" data-color="d" data-title="Women's Wedding" data-id="womenwedding" data-icon="myapp-right" data-iconpos="right"><a href="#">Women's Wedding</a></li>				  
+		      </ul>			
+	      </div>
+		</div>
+		         <!--START MESSAGES PAGE-->
+<div data-role="page" id="offers">
+  <div id="messagehome" data-role="header" data-theme="f">
+      <a class="backhome" href="#home" data-icon="homeicon" data-iconpos="notext">Home</a>      
+      <h1 class="heading">Your Offers</h1>	  
+  </div>
+  <div data-role="content">
+	  <h2 style="text-align: center;">Reedfrog Offers</h2>
+	  <p style="text-align: center;">Hurry and don't miss out! Save money with our exlusive offers. All deals below are listed accordoing to their mist recent expirey date.</p>
+	  <p>&nbsp;</p>
+    <ul id="offerlistviewer" data-inset="false" data-role="listview" data-theme="c">
+</ul>
+ </div>
+</div>
+        <!--END MESSAGES PAGE-->
+        
+         <!--START MESSAGE READER-->
+<div data-role="page" id="offersreader">
+  <div data-role="header" data-theme="f">
+      <a href="#home" data-icon="homeicon" data-iconpos="notext">Home</a>
+      <a id="backtoOffers" href="#offers" data-icon="backicon" data-iconpos="notext">Back</a>
+      <h1 class="heading">New Offer</h1>
+  </div>   
+ <div class="messageitemslist" data-role="content">
+	  <h2 style="text-align: center;" id="offertitle"></h2>
+	 <p id="offerExpires" style="color: red; font-weight: 600;"></p>
+	  <div class="ui-grid-solo"><div class="ui-block-a featuredcollection"><img id="offerImage" src=""  alt=""/></div>
+	  </div>    
+    <p style="text-align: center;" id="offerDescription"></p>
+	 <h3 style="text-align: center;" id="offerCoupon"></h3>
+	     <div data-role="controlgroup">
+			<a data-id="" data-theme="f" id="offerLilnk" href="#" data-role="button" data-iconpos="right">View Offer</a></div>
+	  <h3 style="text-align: center;">Offer Terms</h3>
+	 <p style="text-align: center;" id="offerTerms"></p>
+ </div>  
+</div>
+        <!--END MESSAGES READER-->
+<script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

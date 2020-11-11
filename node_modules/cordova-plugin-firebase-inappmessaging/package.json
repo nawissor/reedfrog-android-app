@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-firebase-inappmessaging@3.4.2",
+  "_id": "cordova-plugin-firebase-inappmessaging@3.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-7VvD91t/SIY/Peto+c2yUYR1xKt3OJNFMMHrC9TfE9Spu8cg0QalzYIulOlCDVvVsmqCrWCVp1Q9rCbleo7Y/A==",
+  "_location": "/cordova-plugin-firebase-inappmessaging",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-firebase-inappmessaging@3.4.2",
+    "name": "cordova-plugin-firebase-inappmessaging",
+    "escapedName": "cordova-plugin-firebase-inappmessaging",
+    "rawSpec": "3.4.2",
+    "saveSpec": null,
+    "fetchSpec": "3.4.2"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-inappmessaging/-/cordova-plugin-firebase-inappmessaging-3.4.2.tgz",
+  "_shasum": "c7e18ced91ee98bca4ab71d0a1490c6d76448655",
+  "_spec": "cordova-plugin-firebase-inappmessaging@3.4.2",
+  "_where": "c:\\xampp\\htdocs\\apps\\reedfrog",
+  "author": {
+    "name": "Maksim Chemerisuk",
+    "email": "chemerisuk@gmail.com",
+    "url": "https://github.com/chemerisuk"
+  },
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-inappmessaging/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-firebase-inappmessaging",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for Firebase In-App Messaging",
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-inappmessaging#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "in-app messaging",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-firebase-inappmessaging",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-inappmessaging.git"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+  },
+  "version": "3.4.2"
+}

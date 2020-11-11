@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846519894843",
+    "firebase_url": "https://tactical-factor-194509.firebaseio.com",
+    "project_id": "tactical-factor-194509",
+    "storage_bucket": "tactical-factor-194509.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846519894843:android:da1099813dc9cfc7ecad1e",
+        "android_client_info": {
+          "package_name": "com.reedfrog.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846519894843-uvs3t6chcvbjvroa0ltiu985gbhjmldp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE2ZDYskVIFfwgdQca0o0d4HZp14GZAYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846519894843-uvs3t6chcvbjvroa0ltiu985gbhjmldp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

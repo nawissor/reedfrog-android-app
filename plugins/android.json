@@ -1,0 +1,71 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "reedfrog",
+      "ANDROID_SCHEME": " ",
+      "ANDROID_HOST": " ",
+      "ANDROID_PATHPREFIX": "/",
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "ANALYTICS_COLLECTION_ENABLED": "true",
+      "AUTOMATIC_SCREEN_REPORTING_ENABLED": "true",
+      "ANDROID_FIREBASE_ANALYTICS_VERSION": "17.5.+",
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-firebase-messaging": {
+      "ANDROID_FIREBASE_MESSAGING_VERSION": "20.2.+",
+      "ANDROIDX_CORE_VERSION": "1.3.+",
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-firebase-inappmessaging": {
+      "ANDROID_FIREBASE_INAPPMESSAGING_VERSION": "19.1.+",
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.reedfrog.shop"
+    }
+  }
+}

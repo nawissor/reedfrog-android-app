@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-firebase-analytics@4.4.3",
+  "_id": "cordova-plugin-firebase-analytics@4.4.3",
+  "_inBundle": false,
+  "_integrity": "sha512-D/cyssNr48/qHEoi7Dfz/Hh4q6PsY3FL7WTl/+19JDP1O073tDj63cJcM0EOGetJ7kX6tSba/1ESzxztg+F9KQ==",
+  "_location": "/cordova-plugin-firebase-analytics",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-firebase-analytics@4.4.3",
+    "name": "cordova-plugin-firebase-analytics",
+    "escapedName": "cordova-plugin-firebase-analytics",
+    "rawSpec": "4.4.3",
+    "saveSpec": null,
+    "fetchSpec": "4.4.3"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-analytics/-/cordova-plugin-firebase-analytics-4.4.3.tgz",
+  "_shasum": "627ad9ee1bb979285cf2439a9cf71e02d0888550",
+  "_spec": "cordova-plugin-firebase-analytics@4.4.3",
+  "_where": "c:\\xampp\\htdocs\\apps\\reedfrog",
+  "author": {
+    "name": "Maksim Chemerisuk",
+    "email": "chemerisuk@gmail.com",
+    "url": "https://github.com/chemerisuk"
+  },
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-firebase-analytics",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for Firebase Analytics",
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "analytics",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-firebase-analytics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-analytics.git"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+  },
+  "version": "4.4.3"
+}
