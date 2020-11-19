@@ -361,6 +361,7 @@ dependencies {
     implementation "androidx.core:core:1.3.+"
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
     implementation "com.google.firebase:firebase-inappmessaging-display:19.1.+"
+    implementation 'com.huawei.agconnect:agconnect-core:1.3.1.300'
     // SUB-PROJECT DEPENDENCIES END
 
 
@@ -428,4 +429,5 @@ if (hasProperty('postBuildExtras')) {
 
 if (cdvHelpers.getConfigPreference('GradlePluginGoogleServicesEnabled', 'false').toBoolean()) {
     apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'com.huawei.agconnect'
 }

@@ -1,0 +1,14 @@
+{
+	"client":{
+		"appType":"1",
+		"cp_id":"2640027000002116479",
+		"product_id":"736430079244706947",
+		"client_id":"498593540696179904",
+		"client_secret":"725CF0A520D40295ECB7AC52A15E0B415958F3498E1503102EB2B86F3CF54FAB",
+		"project_id":"736430079244706947",
+		"app_id":"103275633",
+		"api_key":"CgB6e3x9eKs+xfWw67w3ANdBt62AvDxjL/kqcXQDKvwCPsg+nvuvpXnp2BzRcdPWOnx2aMsH70/6R3jxsgEqrSLY",
+		"package_name":"com.reedfrog.shop"
+	},
+	"configuration_version":"1.0"
+}

@@ -181,14 +181,13 @@ var dataString="deviceuuid="+deviceuuid;
 				 $("#menuCounter").show(); 
 				 
 				 
-                $('#gotoOffers').attr('href', '#offers');
+                
                 
                       
                   
   } else {
       
-           $('#gotoOffers').attr('href', '#');
-	   $("#offerCounter").css("display", "none"); 
+            $("#offerCounter").css("display", "none"); 
 	  $("#menuCounter").css("display", "none"); 
   }
 		
@@ -221,16 +220,13 @@ var dataString="deviceuuid="+deviceuuid;
                  $('#offerCounter').text(messageCount);
 				 $("#offerCounter").css("display", "inline-block"); 
 				 $('#menuCounter').text(messageCount);
-				 $("#menuCounter").show(); 
-				 
-				 
-                $('#gotoOffers').attr('href', '#offers');
+				 $("#menuCounter").show();              
                 
                       
                   
   } else {
       
-           $('#gotoOffers').attr('href', '#');
+      
 	   $("#offerCounter").css("display", "none"); 
 	  $("#menuCounter").css("display", "none"); 
   }
@@ -267,13 +263,13 @@ var dataString="deviceuuid="+deviceuuid;
 				 $("#menuCounter").show(); 
 				 
 				 
-                $('#gotoOffers').attr('href', '#offers');
+              
                 
                       
                   
   } else {
       
-           $('#gotoOffers').attr('href', '#');
+         
 	   $("#offerCounter").css("display", "none"); 
 	  $("#menuCounter").css("display", "none"); 
   }
@@ -1046,15 +1042,16 @@ $(document).delegate('#offers', 'pageshow', function (){
 						
 						var isRead = '<img style="vertical-align: middle" src="img/icons/message-icon.png">';
 					}
-                                                                                             
+                        $( "#offerlistviewer" ).empty();                                                                 
                       $( "#offerlistviewer" ).append('<li data-icon="myapp-rightwhite" data-iconpos="right" data-href="offers" data-id="'+messageId+'"><a href="#">' + isRead + '<h2>'+messageTitle+'</h2><p>'+messageSubject+'</p></a></li>');                                                                   
                         $('#offerlistviewer').listview('refresh').trigger('create');
                     }
                  
                 
             } if(data.newmessages == 'no') {
-                
-                  $( "#offerlistviewer" ).append('<li data-href="#" data-icon="false"><a href="#"><img src="img/messages-icon.png"><h2>No Messages</h2><p>You have no notifications at this time.</p></a></li>'); 
+				
+				 $( "#offerlistviewer" ).empty();                
+                  $( "#offerlistviewer" ).append('<li data-href="#" data-icon="false"><a href="#"><img src="img/messages-icon.png"><h2>No Offers</h2><p>There are no active offers at this time.</p></a></li>'); 
                 $('#offerlistviewer').listview('refresh').trigger('create');
             }
             

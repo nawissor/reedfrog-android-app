@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.reedfrog.shop" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.reedfrog.shop" version="2.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Reedfrog</name>
     <description>
       App users receive regular notifications on new deals and offers exclusively available to app users. New coupon codes added weekly. Explore fashion from the world's leading fashion brands for women, men and kids. 
